@@ -16,3 +16,13 @@ runs = 512
 
 [profile.ci.fuzz]
 runs = 4096
+
+[profile.default.invariant]
+runs = 64
+depth = 64
+fail_on_revert = true
+
+[profile.ci.invariant]
+runs = 256
+depth = 128
+fail_on_revert = true

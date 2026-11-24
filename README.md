@@ -4,7 +4,7 @@ Prove a Flop compute settlement to an EVM contract without a bridge.
 
 Read **finalized** compute-channel settlements from a Flop network, put them in a Merkle tree, have a fixed N-of-M set of attesters sign the root (EIP-712), and verify any single settlement against that root in a small Solidity contract. What crosses chains is information. No FLOP is wrapped, minted, locked or moved.
 
-Status: local prototype. Tested with Foundry and on a throwaway anvil chain only. **Not deployed anywhere.** The attester keys are throwaway local keys with no funds. Unaffiliated with Flop Labs.
+Status: local prototype (receipt root + intent escrow). Tested with Foundry and on a throwaway anvil chain only. **Not deployed anywhere.** The attester keys are throwaway local keys with no funds. Unaffiliated with Flop Labs.
 
 ## Why
 
@@ -36,6 +36,26 @@ node src/cli.mjs keygen --n 3        # throwaway keys in ~/.secrets/flop-receipt
 node src/cli.mjs sign --epoch-file epoch.json --chain-id 31337 --contract 0x... --keys 1,2
 node scripts/e2e-anvil.mjs           # fresh anvil on a free 127.0.0.1 port: deploy, sign, submit, verify all
 ```
+
+## Intent escrow (local prototype, mock USDC)
+
+`contracts/src/IntentEscrow.sol` is the first consumer of the root: pay a solver in USDC only after Flop shows the compute was settled. Swap, don't wrap: the USDC stays on the EVM chain, the FLOP stays on Flop, and only the receipt crosses.
+
+1. **post** (agent): lock `amount` with the terms a settlement must meet: the Flop payer key (`flopAgent`), `modelHash`, `minGn`, and `minFlopBlock` (set it to the Flop head when you post, so old settlements can't count).
+2. **claim** (solver): lock a bond of `BOND_BPS` of the amount (rounded up) from a deposited balance. You need at least `MIN_CLAIM_WINDOW` before the deadline.
+3. **fill** (that solver): show a settlement and its proof under a root epoch. All four terms must match, `ROOTS.verify` must return true, and each settlement leaf can fill only one intent. The solver gets the amount and the bond comes back.
+4. **refund** (anyone, after the deadline): the agent gets the amount back, plus the solver's bond if it was claimed and not filled. **cancel** (agent) works only while the intent is unclaimed.
+
+No owner, no fees, no setters, no upgrade. Per-intent `MAX_AMOUNT` is fixed at deploy. Inflows are balance-checked (a fee-on-transfer token reverts), there is a reentrancy lock, and every error is named. A frozen root contract verifies nothing, so nothing pays.
+
+**Tests.** 9 unit tests, plus a stateful invariant suite: random posts, claims, fills, refunds, cancels, deposits, withdrawals and time warps by 3 actors, 256 runs × 128 calls in CI. It checks three things:
+- the escrow holds exactly the open amounts plus all bonds;
+- the contract's own bond books (free plus locked) match;
+- the mock supply never changes.
+
+**On anvil** (`node scripts/e2e-anvil.mjs`): post 10 mock USDC, bond 2, claim, then fill with devnet settlement #5 from the signed epoch. The fill uses **129,053 gas**, and the solver is paid exactly 10. A tampered settlement reverts, and reusing the same settlement for a second intent reverts.
+
+**Known limit, stated plainly.** A Flop settlement can't carry an intent id today. So any settlement by the agent's own Flop key, for that model and at least that much G_n after `minFlopBlock`, satisfies the intent, whoever arranged it. That is fine when the agent's Flop key only ever spends through the solver it hired. It is not a general marketplace. The fix is the commitment field asked for on flop-labs/network#49. `MockUSDC` is test-only (anyone can mint) and lives under `contracts/test/`.
 
 ## Trust model, stated plainly
 

@@ -16,7 +16,7 @@ const PORT = await new Promise((res, rej) => {
 });
 const RPC = `http://127.0.0.1:${PORT}`;
 const bin = (n) => join(process.env.HOME, '.foundry', 'bin', n);
-const sh = (cmd, args) => execFileSync(bin(cmd), args, { encoding: 'utf8' }).trim();
+const sh = (cmd, args) => execFileSync(bin(cmd), args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
 const work = mkdtempSync(join(tmpdir(), 'frr-e2e-'));
 process.env.FRR_KEY_DIR = join(work, 'keys');
 
@@ -53,8 +53,42 @@ try {
   const bad = { ...fx.items[0].fields, minerPaid: String(BigInt(fx.items[0].fields.minerPaid) + 1n) };
   const tampered = sh('cast', ['call', addr, S, '1', st(bad), `[${fx.items[0].proof.join(',')}]`, '--rpc-url', RPC]);
   const verifyGas = sh('cast', ['estimate', addr, S.replace('(bool)', ''), '1', st(fx.items[0].fields), `[${fx.items[0].proof.join(',')}]`, '--rpc-url', RPC]);
-  console.log(JSON.stringify({ chain: 'anvil 31337 @127.0.0.1', contract: addr, attesters, threshold: 2, submitStatus: tx.status, submitGas: Number(tx.gasUsed), verified: `${ok}/${fx.items.length}`, tamperedVerifies: tampered, verifyGasEstimate: Number(verifyGas) }, null, 1));
-  if (ok !== fx.items.length || tampered !== 'false') process.exitCode = 1;
+
+  // Intent escrow against a test-only mock USDC: post, bond, claim, fill with a real devnet settlement.
+  const solver = JSON.parse(sh('cast', ['rpc', 'eth_accounts', '--rpc-url', RPC]))[1];
+  const create = (what, args = []) => {
+    const out = sh('forge', ['create', what, '--rpc-url', RPC, '--unlocked', '--from', from, '--broadcast', '--json', ...(args.length ? ['--constructor-args', ...args] : [])]);
+    return JSON.parse(out.slice(out.indexOf('{'))).deployedTo;
+  };
+  const send = (who, to, sig, ...a) => JSON.parse(sh('cast', ['send', to, sig, ...a, '--rpc-url', RPC, '--unlocked', '--from', who, '--json']));
+  const tries = (who, to, sig, ...a) => { try { send(who, to, sig, ...a); return 'accepted'; } catch { return 'reverted'; } };
+  const bal = (tok, who) => BigInt(sh('cast', ['call', tok, 'balanceOf(address)(uint256)', who, '--rpc-url', RPC]).split(' ')[0]);
+  const usdc = create('contracts/test/mocks/MockUSDC.sol:MockUSDC');
+  const esc = create('contracts/src/IntentEscrow.sol:IntentEscrow', [usdc, addr, '1000000000', '2000', '3600']);
+  const AMT = 10_000_000n; // 10 mock USDC
+  for (const w of [from, solver]) {
+    send(w, usdc, 'mint(address,uint256)', w, '100000000');
+    send(w, usdc, 'approve(address,uint256)', esc, '100000000');
+  }
+  const it5 = fx.items[5];
+  const f5 = it5.fields;
+  const now = Number(sh('cast', ['block', 'latest', '--field', 'timestamp', '--rpc-url', RPC]));
+  send(from, esc, 'post(uint96,uint64,uint64,bytes32,bytes32,uint128)', String(AMT), String(now + 86400), f5.settledBlock, f5.agent, f5.modelHash, f5.aggregateGn);
+  send(solver, esc, 'deposit(uint256)', '2000000');
+  send(solver, esc, 'claim(uint256)', '1');
+  const F = 'fill(uint256,uint64,(bytes32,bytes32,uint64,bytes32,uint32,bytes32,bytes32,bytes32,uint128,uint128,uint128,uint128),bytes32[])';
+  const tamperedFill = tries(solver, esc, F, '1', '1', st({ ...f5, minerPaid: String(BigInt(f5.minerPaid) + 1n) }), `[${it5.proof.join(',')}]`);
+  const before = bal(usdc, solver);
+  const fillTx = send(solver, esc, F, '1', '1', st(f5), `[${it5.proof.join(',')}]`);
+  const solverGot = bal(usdc, solver) - before;
+  send(from, esc, 'post(uint96,uint64,uint64,bytes32,bytes32,uint128)', String(AMT), String(now + 86400), f5.settledBlock, f5.agent, f5.modelHash, f5.aggregateGn);
+  send(solver, esc, 'claim(uint256)', '2');
+  const reuse = tries(solver, esc, F, '2', '1', st(f5), `[${it5.proof.join(',')}]`);
+  const escrowHeld = bal(usdc, esc);
+  const escrow = { mockUsdc: usdc, escrow: esc, tamperedFill, fillStatus: fillTx.status, fillGas: Number(fillTx.gasUsed), solverPaid: String(solverGot), sameSettlementAgain: reuse, escrowHolds: String(escrowHeld) };
+  console.log(JSON.stringify({ chain: 'anvil 31337 @127.0.0.1', contract: addr, attesters, threshold: 2, submitStatus: tx.status, submitGas: Number(tx.gasUsed), verified: `${ok}/${fx.items.length}`, tamperedVerifies: tampered, verifyGasEstimate: Number(verifyGas), escrow }, null, 1));
+  // After fill 1: solver's 2 USDC bond is free again and re-locked by claim 2; escrow holds intent 2 (10) + that bond (2).
+  if (ok !== fx.items.length || tampered !== 'false' || tamperedFill !== 'reverted' || reuse !== 'reverted' || solverGot !== AMT || escrowHeld !== AMT + 2_000_000n) process.exitCode = 1;
 } finally {
   anvil.kill();
 }
