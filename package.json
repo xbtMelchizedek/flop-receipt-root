@@ -1,0 +1,21 @@
+{
+  "name": "flop-receipt-root",
+  "version": "0.1.0",
+  "description": "Summarize finalized Flop settlements into a Merkle root, sign it with N-of-M attesters, verify it on an EVM. Local and read-only: never broadcasts.",
+  "main": "src/epoch.mjs",
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@noble/curves": "1.9.7",
+    "@noble/hashes": "1.8.0"
+  },
+  "bin": {
+    "flop-receipt-root": "src/cli.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
