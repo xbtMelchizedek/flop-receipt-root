@@ -8,9 +8,23 @@ import { randomBytes } from 'node:crypto';
 import { buildEpoch, NETWORKS } from './epoch.mjs';
 import { finalizedHead, settlementsSince } from './fetch.mjs';
 import { addressOf, signRoot, sortBySigner } from './attest.mjs';
+import { connectRpc, crossCheck, readChainFacts, rpcFinalized, rpcHashAt } from './rpc.mjs';
+
+/** The real chain as a second source. Tests inject their own. */
+async function openChain(network, url) {
+  const api = await connectRpc(network, url);
+  return {
+    finalized: () => rpcFinalized(api),
+    hashAt: (n) => rpcHashAt(api, n),
+    readFacts: (f) => readChainFacts(api, f),
+    close: () => api.disconnect(),
+  };
+}
 
 const HELP = `flop-receipt-root
-  build  --network devnet|testnet --from <block> [--max <rows>] [--epoch <n>] --out <file>
+  build  --network devnet|testnet --from <block> [--max <rows>] [--epoch <n>] [--rpc <https url>] --out <file>
+         # every leaf is re-read from the chain over JSON-RPC; any disagreement refuses the build
+  check  --epoch-file <file> [--rpc <https url>]   # re-run the chain cross-check on an existing epoch file
   keygen --n <count>                      # throwaway attester keys in ~/.secrets/flop-receipt-root (mode 600)
   sign   --epoch-file <file> --chain-id <id> --contract <0x..> [--keys 1,2]   # adds sigs to the file
 Never broadcasts. Keys are local test keys with no funds; never reuse them anywhere.`;
@@ -31,7 +45,7 @@ const uint = (k, v) => {
   return Number(v);
 };
 
-export async function main(argv, { fetchImpl = globalThis.fetch, out = console.log } = {}) {
+export async function main(argv, { fetchImpl = globalThis.fetch, out = console.log, chainImpl } = {}) {
   const { cmd, o } = args(argv);
   if (cmd === 'build') {
     if (!NETWORKS[o.network]) throw new Error('--network must be devnet or testnet');
@@ -42,9 +56,37 @@ export async function main(argv, { fetchImpl = globalThis.fetch, out = console.l
     const finalized = await finalizedHead(o.network, fetchImpl);
     const rows = await settlementsSince(o.network, fromBlock, { maxRows, fetchImpl });
     const e = buildEpoch({ rows, finalized, genesis: NETWORKS[o.network].genesis, epoch, fromBlock });
-    writeFileSync(o.out, JSON.stringify({ network: o.network, builtAt: new Date().toISOString(), source: NETWORKS[o.network].explorer, ...e, sigs: [] }, null, 1));
-    out(JSON.stringify({ ok: true, ...e.msg, dropped: e.dropped, totals: e.totals }));
+    const chain = chainImpl ?? (await openChain(o.network, o.rpc));
+    let cc;
+    try {
+      cc = await crossCheck(e, chain);
+    } catch (err) {
+      if (err.problems) out(JSON.stringify({ ok: false, error: err.message, problems: err.problems.slice(0, 50) }));
+      throw err; // nothing is written: a root the chain disagrees with is never built
+    } finally {
+      await chain.close?.();
+    }
+    const sources = { explorer: NETWORKS[o.network].explorer, rpc: o.rpc ?? NETWORKS[o.network].rpc, rpcChecked: cc.checked, rpcFinalized: cc.finalized.number };
+    writeFileSync(o.out, JSON.stringify({ network: o.network, builtAt: new Date().toISOString(), source: NETWORKS[o.network].explorer, sources, ...e, sigs: [] }, null, 1));
+    out(JSON.stringify({ ok: true, ...e.msg, dropped: e.dropped, totals: e.totals, rpcChecked: cc.checked }));
     return 0;
+  }
+  if (cmd === 'check') {
+    const e = JSON.parse(readFileSync(o['epoch-file'], 'utf8'));
+    const network = e.network ?? Object.keys(NETWORKS).find((k) => NETWORKS[k].genesis === e.msg?.genesis);
+    if (!NETWORKS[network] || NETWORKS[network].genesis !== e.msg?.genesis) throw new Error('epoch genesis is not a pinned network');
+    const chain = chainImpl ?? (await openChain(network, o.rpc));
+    try {
+      const cc = await crossCheck(e, chain);
+      out(JSON.stringify({ ok: true, network, checked: cc.checked, root: e.msg.root, rpcFinalized: cc.finalized.number }));
+      return 0;
+    } catch (err) {
+      if (!err.problems) throw err;
+      out(JSON.stringify({ ok: false, error: err.message, problems: err.problems.slice(0, 50) }));
+      return 1;
+    } finally {
+      await chain.close?.();
+    }
   }
   if (cmd === 'keygen') {
     const n = uint('n', o.n);

@@ -1,0 +1,2309 @@
+{
+ "recordedAt": "2026-11-24T20:16:05.916Z",
+ "rpc": "https://rpc.devnet.flop.network",
+ "finalizedAtRecording": 4555777,
+ "toBlock": "4552514",
+ "toBlockHash": "0x0c2497e7581678440dfcc5dcca7631c3fa5b33ffef222d5b18e9e2455e8a7e72",
+ "facts": {
+  "0xf5f622f23a6dacfaee3f0fb9380fad16c6f4a14d453b10aba9ee18bd9991793a:4548714:5": {
+   "settledBlock": "4548714",
+   "blockHash": "0x3592ace183c6e5a57fa86804e59f5cf08d3382099a9c2fbe80322162b6380e7b",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xf5f622f23a6dacfaee3f0fb9380fad16c6f4a14d453b10aba9ee18bd9991793a",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Dk6nmJ7sCvMr7KQpNmrzo4hvKCMaW2NQZTgfooadosaQ1C8",
+    "miner": "5Chy37pnN4jEixE77wp9pa46tV7rV4n1p5NaEDPJvhYzsaA1",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xb37ae9811b19e6eeb3f9f64d155d63332a764312d982935546240c97350c7065:4548780:5": {
+   "settledBlock": "4548780",
+   "blockHash": "0xd572fba2b9586102e0574cb7cfb37aaf490f2515af01f675b274e5249797b8a0",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xb37ae9811b19e6eeb3f9f64d155d63332a764312d982935546240c97350c7065",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5ECtifN794J9g6PjhPH4kD2JCTKN2mjepnr6PwcVcxhQQEwe",
+    "miner": "5FcPv277tkYptSXuPcguF1bmjtt9GS6uemw4Pj8mEuoe6bA3",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x1aefef2ed114a93604f87d72ab68a3c5598fa33e141f1abc5baa8754ad1eb698:4548817:5": {
+   "settledBlock": "4548817",
+   "blockHash": "0x6541570a03d9d0642f3cf2dadac5176b2971c8b48314f25a4f24b2a54e0227a3",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x1aefef2ed114a93604f87d72ab68a3c5598fa33e141f1abc5baa8754ad1eb698",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Dw2dMGPZcxKCNxkFL8o6qRYNdzqMfx3RGzAaTzkEXdr7PfY",
+    "miner": "5GNefLSSb6QjrH2BnV5rcB3Whib2eiQPmqHga7mqzUdotymq",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xfeaa6352a59e7795678f83bad58980d9d2f74a2861e65325c5611a459d7965c2:4548846:5": {
+   "settledBlock": "4548846",
+   "blockHash": "0xc6a1e0abedc063e4d99987b8f9bfdd22750262e3c4e34dfbdcb79dfcd5a6e7c4",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xfeaa6352a59e7795678f83bad58980d9d2f74a2861e65325c5611a459d7965c2",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5ER5ACZ9gAEimhq2QMXhDygazuxDURF8RE9SbndfMHqrFqzT",
+    "miner": "5EPcXHMdGjQUMC1gSWhjpe66f6pVpYtqDFHFVoYigoLM6wWK",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x7ab1a82e512abfe2f4a5d60f996c12f9df9812f74a30757ad04caeca0eab3e2c:4548927:5": {
+   "settledBlock": "4548927",
+   "blockHash": "0x174203983f050f396e5a881fe4368161250b59ceb45e70c3028a553e5732f8a6",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x7ab1a82e512abfe2f4a5d60f996c12f9df9812f74a30757ad04caeca0eab3e2c",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CdDHeYSBBEkRAVoZFnpEBseX38UUW25FqboCu2gvUH9LJz1",
+    "miner": "5HbvZYmEpNZdiJ35vBj7kVGAMqFBMry28sLfY5sUSrXk3P8A",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xca17119fa779eef1c950365b0da6374303012d03de99121720ee4dedeae7c555:4549078:5": {
+   "settledBlock": "4549078",
+   "blockHash": "0x59886e22337882227d4d9205d66360af4cd94d321a9eb72522275b46817dd988",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xca17119fa779eef1c950365b0da6374303012d03de99121720ee4dedeae7c555",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CrRbo5hGqE7T6AwXDB7JSsDmJe2VU5TCADJmkqYwRnSx2bq",
+    "miner": "5G16iKKi4UG6SNhDhZcyFMqQLWGYhsr28r9ehV1UsTWDTtcU",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xc3b1a0523ded67a23199af2d44d5ddcd8a34d72488513ac8771bf54d7476ae19:4549123:5": {
+   "settledBlock": "4549123",
+   "blockHash": "0x4e2008f7e164e4b5a337cc94a96dfb53b925d2bb62a91022f65060b59cbb202e",
+   "settled": [
+    {
+     "blockEventIndex": 144,
+     "eventIndex": 5,
+     "channelId": "0xc3b1a0523ded67a23199af2d44d5ddcd8a34d72488513ac8771bf54d7476ae19",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5GLNozBhEHZMqzr3TMhPXfzYp12SZ8cCkes2d5xX919yixWA",
+    "miner": "5CAtn4aHDgFNxEAXt2EsNvwGexcYv34hdpWbJeoQDuAsGgfR",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x527b8a3e9533d4f5ced278a0e5cdcd5947fbf732d6717ba253457ded597bb6dc:4549185:5": {
+   "settledBlock": "4549185",
+   "blockHash": "0x34441e8767f019674d2ac01fb2db4cafb8929207a99f7f5941003805e168b918",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x527b8a3e9533d4f5ced278a0e5cdcd5947fbf732d6717ba253457ded597bb6dc",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Gxj4YyKwRcbjC9RU5rvhhWno2pDDq5nhX65Atz5ffrbQCK9",
+    "miner": "5E22AaQ7pQ27uGjjzgf6Lf7uAeMehdC8MyyC3UEivjkgAswh",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xadc0b895caf33177cf32536c19d7faa8e94e1b09c6e44226508ccf390419cdd4:4549187:5": {
+   "settledBlock": "4549187",
+   "blockHash": "0xe29c616ad6278f05069ac1b832c870482789f09ca121612e9bc20f761da15956",
+   "settled": [
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xadc0b895caf33177cf32536c19d7faa8e94e1b09c6e44226508ccf390419cdd4",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5ESBEK4voxgwmoMnQzVD6HSTxEKrZ2PBRUiEnyR6QUNCTQzr",
+    "miner": "5DWk7Ay6xH8352qSc1vZDvDgLNRKyqWristcGQ4vrQpbFQcM",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x9a41449f91f2d2f561a0187cfe72ee19eaf6ea95576a2a40d2060f3bd653a42f:4549294:5": {
+   "settledBlock": "4549294",
+   "blockHash": "0x35ca177091470921b2ea6f2e3bd7e0f0fe821d03375920724b8827b9b93cbeb6",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x9a41449f91f2d2f561a0187cfe72ee19eaf6ea95576a2a40d2060f3bd653a42f",
+     "minerPaid": "7951750000000003",
+     "burned": "0",
+     "aggregateGn": "18710"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5EEwCVsYMJa4Sc9J9w3k2Rjwpvd2UghgkJacuT5RRTqyhEiR",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "9355000000000003"
+   }
+  },
+  "0x913e3af030246d4aba61b5b020375c932ede914724b253a26dc620e264bf580c:4549309:5": {
+   "settledBlock": "4549309",
+   "blockHash": "0x3e318e6e51cf996bc332a92e03b95cbd56377297a08ca22ca47a18dd18572599",
+   "settled": [
+    {
+     "blockEventIndex": 17,
+     "eventIndex": 5,
+     "channelId": "0x913e3af030246d4aba61b5b020375c932ede914724b253a26dc620e264bf580c",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198442"
+    }
+   ],
+   "channel": {
+    "agent": "5Df3aJ1SfM5VGtNLxDx2AiBNqcYP5vetqZ4H8hWf6ka6CqPh",
+    "miner": "5CaNZhyqPSYq6bQZHUe5YLbkxEasw7FWH46nQStEJtQSdB3W",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x26a8e4b40a9db848bfa0803276a0901f64715585cc611038b4366ed9f999c66a:4549316:5": {
+   "settledBlock": "4549316",
+   "blockHash": "0x8aa22a3d0c6b9b8df16270386d8b510002545e77f729dc4cb0c73818b2d3a973",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x26a8e4b40a9db848bfa0803276a0901f64715585cc611038b4366ed9f999c66a",
+     "minerPaid": "8500000000000000",
+     "burned": "0",
+     "aggregateGn": "47"
+    }
+   ],
+   "channel": {
+    "agent": "5DJ8PiUQf3WEugSnDnkWZxrnv7nZrwLXaTG1UXqANVms4iMe",
+    "miner": "5HdTbhVY9jZCsfJVFENYF89hRfkBvoby2YxPest3XLLRhnrt",
+    "modelHash": "0x1a52c1abe781db051e70ae357f72bb70161ca0c092df0b618f22a9292ba63306",
+    "escrow": "10000000000000000"
+   }
+  },
+  "0x18b33353867fafe7f82492f79356fea149c36b132710ffa6f49c8c47e7934419:4549369:5": {
+   "settledBlock": "4549369",
+   "blockHash": "0xe939ea54620166c404b193fcbe23ab79b7d735b02dd37719a9871c0bf480a80e",
+   "settled": [
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0x18b33353867fafe7f82492f79356fea149c36b132710ffa6f49c8c47e7934419",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 28,
+     "eventIndex": 5,
+     "channelId": "0xa8105001494794c9f7e455e73ad5614244ec698df6245dbc2f17b43e562d9bda",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5FjKsAMovWpVPFkbqX7sErhxfdhmc1owPuWbGn3Xg7H6Tcie",
+    "miner": "5Dnc5WcP8kFiwk88hPs7sSqqPreZgr5pHy7cN9WshXzWeniE",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xa8105001494794c9f7e455e73ad5614244ec698df6245dbc2f17b43e562d9bda:4549369:5": {
+   "settledBlock": "4549369",
+   "blockHash": "0xe939ea54620166c404b193fcbe23ab79b7d735b02dd37719a9871c0bf480a80e",
+   "settled": [
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0x18b33353867fafe7f82492f79356fea149c36b132710ffa6f49c8c47e7934419",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 28,
+     "eventIndex": 5,
+     "channelId": "0xa8105001494794c9f7e455e73ad5614244ec698df6245dbc2f17b43e562d9bda",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5E7kmFp1vhdnmVQUX9D9vMrwboGp7UHEoitGX3wyo9RgiZ61",
+    "miner": "5FYyyERBuXNmgFNVC8D84vY1bvRdjDc6WSkekXg2eRzNQvEC",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x0d62a05dbda4540f7a6914e89b53869ee6182a45b4db175771ef99a87f421edf:4549370:5": {
+   "settledBlock": "4549370",
+   "blockHash": "0x62d8f2180a596681362230b0db9bbbb6394f844f5876df90fe67a0713edc5613",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x0d62a05dbda4540f7a6914e89b53869ee6182a45b4db175771ef99a87f421edf",
+     "minerPaid": "7939000000000003",
+     "burned": "0",
+     "aggregateGn": "18680"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5EEwCVsYMJa4Sc9J9w3k2Rjwpvd2UghgkJacuT5RRTqyhEiR",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "9340000000000003"
+   }
+  },
+  "0x27a51642f5e4ba6fddeb134b79ae8dca59edc38f6624b4b171f722c389238f85:4549417:5": {
+   "settledBlock": "4549417",
+   "blockHash": "0xf85ac38489002266aad277b6e992cb92e05bd30f634018278ad8c860d6848bbd",
+   "settled": [
+    {
+     "blockEventIndex": 17,
+     "eventIndex": 5,
+     "channelId": "0x27a51642f5e4ba6fddeb134b79ae8dca59edc38f6624b4b171f722c389238f85",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Fq5jmD4NVBfVtxwpDtpfsWYLpee7Ww2oJBnVpqRXxKu6hC3",
+    "miner": "5ECDmNGkRG9JndkH2Hs21ndNgRQQ1eGVUPGMV66easB9JFyv",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xfe890422669581b2cbbd3b74939659a04144c93c3e3a546b86a89750645f8375:4549577:5": {
+   "settledBlock": "4549577",
+   "blockHash": "0x7be09967e84a17ef0be93746300c5fa21e8684012263e7f83544727ea50b4d4f",
+   "settled": [
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xfe890422669581b2cbbd3b74939659a04144c93c3e3a546b86a89750645f8375",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5HdZeGhtsaRTmUsSDQk4Cs7URCdAXvP35nL3FaFrqfpEZJUD",
+    "miner": "5HEoCeWiKiruNfSv7Me9FEMvf1pcEBzcfL5QnFuiM76Hzgh9",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xec87a1f305828794b5b9770c46caca40c54478a13240dd6ec186bf2db99728ac:4549586:5": {
+   "settledBlock": "4549586",
+   "blockHash": "0x91de473d257b8546fec72b4c5c264728a886b18dc609377cab466702b0349b8a",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xec87a1f305828794b5b9770c46caca40c54478a13240dd6ec186bf2db99728ac",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5GxtfvaT5mdWvPJjWD8CDvPi3JS4AwgBEHzKhBq27EyccQJN",
+    "miner": "5HU4zQrkLD1eCb5MzCqGSosBeB9gZqnEmkKsD6LniydSoC4B",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x85ceae4dd20f3e50b82cc30888dcf795b32d946d92101956a34bb17db9226fb0:4549680:5": {
+   "settledBlock": "4549680",
+   "blockHash": "0x6de36c5a7af395d9692fdcb77d18dce7d403c21925b2156570eb41fe1ce886c0",
+   "settled": [
+    {
+     "blockEventIndex": 20,
+     "eventIndex": 5,
+     "channelId": "0x85ceae4dd20f3e50b82cc30888dcf795b32d946d92101956a34bb17db9226fb0",
+     "minerPaid": "147214475000000018",
+     "burned": "0",
+     "aggregateGn": "346387"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5EEwCVsYMJa4Sc9J9w3k2Rjwpvd2UghgkJacuT5RRTqyhEiR",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "173193500000000021"
+   }
+  },
+  "0xecb60c8ac64fafc56258d272cdc59ff0643f0632001b5634b6d083eb33691ba3:4549697:5": {
+   "settledBlock": "4549697",
+   "blockHash": "0xfb79c5a894b2423e805ac16e8bcfa837ac57ec0e6e5989b7f40a485db4812d16",
+   "settled": [
+    {
+     "blockEventIndex": 18,
+     "eventIndex": 5,
+     "channelId": "0xecb60c8ac64fafc56258d272cdc59ff0643f0632001b5634b6d083eb33691ba3",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Dndg5yShNt1RBexs8HwHneJJ4sepjPw6ggUbHwXQQ27XDB8",
+    "miner": "5GdzEoLZbZpgiUZWfi47wWsBGBneeEvfY9bY5cRbpo8kB6j2",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x511d1c74fedc50e9c44b646ad09ccb243cf5262d12bad7afe778beab6ece527b:4549700:5": {
+   "settledBlock": "4549700",
+   "blockHash": "0xd4fd11eb7871a63aa101367bbf6828a18d1cafee7926a6f4f6e0fe412f64d830",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0x511d1c74fedc50e9c44b646ad09ccb243cf5262d12bad7afe778beab6ece527b",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5FKnsEboPh8sVzVtKV3NWwdZjB4URzjdGrsZtAt89P9SJb13",
+    "miner": "5F23sPc3GLrD8ZCCvqKu3Y8KcBpkuxpTQsUfJVyMkkjoRyif",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x4ec71b4b3b477300400d6840f1ccd1913b3459fe49cfa3630cabe8f25971549d:4549721:5": {
+   "settledBlock": "4549721",
+   "blockHash": "0xead95e47af44653054de5dbc32301845e75dde498b2b360f479a5c91d588d6c4",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x4ec71b4b3b477300400d6840f1ccd1913b3459fe49cfa3630cabe8f25971549d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Fjfqcn4hysWF35YWgCKrUTcK5a6h9CJYsrcpbeXWKVskZss",
+    "miner": "5CyGykYRCYC7GoWwGxs6wHMF2XTLktgh5qrn9GNTEekttNXG",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x200a024dfb43c9bee0be53b1ec64c00c6f6bcaa495b09d58c3718e4607cc05aa:4549739:5": {
+   "settledBlock": "4549739",
+   "blockHash": "0x2d88765ecd8f517c3fda3063b32c2ab6b170dd8ffab82005d08ece3992858cfc",
+   "settled": [
+    {
+     "blockEventIndex": 26,
+     "eventIndex": 5,
+     "channelId": "0x200a024dfb43c9bee0be53b1ec64c00c6f6bcaa495b09d58c3718e4607cc05aa",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 35,
+     "eventIndex": 5,
+     "channelId": "0xe473d5c5b6ff6353c023bc6d2b45404311aa1724e0b7a70082be0896986e7e21",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Hmsu7Y13mFSzRUDvK87GaiBjsfGaVtSkQPKRMqdvLPgfBdS",
+    "miner": "5HNXAZNBE4BGpedxdVPpmWyK1MMmeUrD7szL5DCsq6jbMDMj",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xe473d5c5b6ff6353c023bc6d2b45404311aa1724e0b7a70082be0896986e7e21:4549739:5": {
+   "settledBlock": "4549739",
+   "blockHash": "0x2d88765ecd8f517c3fda3063b32c2ab6b170dd8ffab82005d08ece3992858cfc",
+   "settled": [
+    {
+     "blockEventIndex": 26,
+     "eventIndex": 5,
+     "channelId": "0x200a024dfb43c9bee0be53b1ec64c00c6f6bcaa495b09d58c3718e4607cc05aa",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 35,
+     "eventIndex": 5,
+     "channelId": "0xe473d5c5b6ff6353c023bc6d2b45404311aa1724e0b7a70082be0896986e7e21",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5HWLfPgCEefLBk5YNtdpNEvFVaD79uBoQx661NYrU7gQwLkv",
+    "miner": "5DM6qp56dsCGQ2VaQENJss4P4LCaw3r8jcHsNtUAyx2jkvqy",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x8eba3877d1c503ea115e7c99f2b426dac211c09b6a61d4f458b26790b7a0449d:4549781:5": {
+   "settledBlock": "4549781",
+   "blockHash": "0xfe2e4c54da007c655f810b79d3e716fc7555a48100557a1ed2ad17edcfe701dc",
+   "settled": [
+    {
+     "blockEventIndex": 17,
+     "eventIndex": 5,
+     "channelId": "0x8eba3877d1c503ea115e7c99f2b426dac211c09b6a61d4f458b26790b7a0449d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CyCo9n3zoK376LtbHBJTFieaXLYNkbFxiJxj4k5fMVzeuH1",
+    "miner": "5E9QVx8WSxha5ku3txwgbNudYq3za9Hx3fAK1WcDDJ4EUswV",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x748ae473ffb0550ec067aeac6679f89f62f48324b5a92d44482d0eee1a6f5859:4549807:5": {
+   "settledBlock": "4549807",
+   "blockHash": "0x3364b41de5e5da82990637d19df41e32dd47f49b5cc5d206e199038a203e62cf",
+   "settled": [
+    {
+     "blockEventIndex": 87,
+     "eventIndex": 5,
+     "channelId": "0x7abc0ca43cc0e7ccf2400f31287085eca24b7e0ee41e11bd539506f1d7f890b1",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 96,
+     "eventIndex": 5,
+     "channelId": "0x748ae473ffb0550ec067aeac6679f89f62f48324b5a92d44482d0eee1a6f5859",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5EWcyjPsKLv86THyMApFDQhy42GZumhZQki7GDekktmN11FZ",
+    "miner": "5G6gtG7RuAi7nC1q9qBibqNDpPYa9w1CcqdyfAuwWmwRRCXX",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x7abc0ca43cc0e7ccf2400f31287085eca24b7e0ee41e11bd539506f1d7f890b1:4549807:5": {
+   "settledBlock": "4549807",
+   "blockHash": "0x3364b41de5e5da82990637d19df41e32dd47f49b5cc5d206e199038a203e62cf",
+   "settled": [
+    {
+     "blockEventIndex": 87,
+     "eventIndex": 5,
+     "channelId": "0x7abc0ca43cc0e7ccf2400f31287085eca24b7e0ee41e11bd539506f1d7f890b1",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 96,
+     "eventIndex": 5,
+     "channelId": "0x748ae473ffb0550ec067aeac6679f89f62f48324b5a92d44482d0eee1a6f5859",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Dkr2sKtkMvomZiy4gQ7qoqTwxDoWpMsvJiSW5Gkr75T3e17",
+    "miner": "5FCqg9qKTTTUgJzkGCEVF5GbWXgR2TP62pnRgTn97fyppvMb",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x279f2e00a8c7915cd7757a19944aa75e89db3db54e11dac155ae18585ec7e75f:4549808:5": {
+   "settledBlock": "4549808",
+   "blockHash": "0xa30f7a8a0d8abee2158adbe38100d64897f5457a710b97b2fd45a5855267230a",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x279f2e00a8c7915cd7757a19944aa75e89db3db54e11dac155ae18585ec7e75f",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5FKnUWoJAgpD6FRD3s5NGAfQrEW2ryYkRfDgwxt799L8zhQZ",
+    "miner": "5DSNWyz659oX4ooAhM9mVzDR4amGy8Lk8D1yexUSUCANx482",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x5281f806266a7ebf7ca95e03510ca1fb3765cda92a61027b868fccae88a06f77:4549814:5": {
+   "settledBlock": "4549814",
+   "blockHash": "0xc53658056f7049a72c2d37e04c520e8b04cffa848739ac4cd4f7a0f87a3378bb",
+   "settled": [
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0x5281f806266a7ebf7ca95e03510ca1fb3765cda92a61027b868fccae88a06f77",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 28,
+     "eventIndex": 5,
+     "channelId": "0xaea713275b6fcc45e01fb712d14e331c63c71483aac336f7b6145e48ff5b99bf",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Ff3bjDYFRcUBKrpF49V11ZYRe3gSqBAECZUDkKS2Q93FqcJ",
+    "miner": "5EqM5hpryTAbZDRaoZC3LgMbrKUK5rz85qzLsrw7MBv5L8tz",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xaea713275b6fcc45e01fb712d14e331c63c71483aac336f7b6145e48ff5b99bf:4549814:5": {
+   "settledBlock": "4549814",
+   "blockHash": "0xc53658056f7049a72c2d37e04c520e8b04cffa848739ac4cd4f7a0f87a3378bb",
+   "settled": [
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0x5281f806266a7ebf7ca95e03510ca1fb3765cda92a61027b868fccae88a06f77",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 28,
+     "eventIndex": 5,
+     "channelId": "0xaea713275b6fcc45e01fb712d14e331c63c71483aac336f7b6145e48ff5b99bf",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5ES4jocU1RSJzE5eTL35RoMqngh2vjUQacACMN1jkDd2oRuq",
+    "miner": "5GjS96BsGUhawkiRxvcnpK9NuyTBHh5BiEfpCKpvv1GPcaYp",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x46007c9e41ab53dbd82e103c936009a6ae2ede0bcaad41715f6729f2cd7d05ed:4549815:5": {
+   "settledBlock": "4549815",
+   "blockHash": "0x115a111f37fc45ab2b1aa73df5648309aab25fe13c064c1bd5791f22059ab4fd",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x46007c9e41ab53dbd82e103c936009a6ae2ede0bcaad41715f6729f2cd7d05ed",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5HYqQfXQTqeHZuLKciKNtKtbuw2DhHLhVTJiRBaoZkJHqBCs",
+    "miner": "5D2Qy1Gskp4Pr5xuhFfZwaPdciK6XzQrLMVPTFXWZbdBHeZ7",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x68c960c8ab37c79d40d8a4e0e85cd11e8410a3cb71b4e55120b8e4613a56cd1d:4549846:5": {
+   "settledBlock": "4549846",
+   "blockHash": "0x064c9572b74bb33840994b98062c7d5bd2688a847c04e8d3b734ffc834c2e443",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0xd253e0291eb6edac94e90a68b652692f388c5a18b465c40e71dfbc6e25a7a7e7",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0x68c960c8ab37c79d40d8a4e0e85cd11e8410a3cb71b4e55120b8e4613a56cd1d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5FHx2esruYDficmvveB2RfP2fhtwUK4T7NF3uVseKtsiACbE",
+    "miner": "5CZybJgUmojRfH1s4Kk8jkvzPRyKD3rC6sJQk4XfBNRtTMaf",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xd253e0291eb6edac94e90a68b652692f388c5a18b465c40e71dfbc6e25a7a7e7:4549846:5": {
+   "settledBlock": "4549846",
+   "blockHash": "0x064c9572b74bb33840994b98062c7d5bd2688a847c04e8d3b734ffc834c2e443",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0xd253e0291eb6edac94e90a68b652692f388c5a18b465c40e71dfbc6e25a7a7e7",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0x68c960c8ab37c79d40d8a4e0e85cd11e8410a3cb71b4e55120b8e4613a56cd1d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5EZ6UJGtTJdBNWDdjbBByMoHkJ2fG9muqWFECMqQcYn2gwPS",
+    "miner": "5E7ksUfoBkcgxuLMEiUSLg8iSwYj9W4Ab8cX57AvrsZ4eMVV",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xfd4ee7db2c3262629b3b0d69bc735340ee85cd245a0eb03c7e04de9192c5991c:4549857:5": {
+   "settledBlock": "4549857",
+   "blockHash": "0x63c430f0bdf5ee27512953013d07689b33775f95ebcab6c90b5b85d53cec5494",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xfd4ee7db2c3262629b3b0d69bc735340ee85cd245a0eb03c7e04de9192c5991c",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CFqNTuuGGupzAbe5VMUb6XQHuvxrNzoxJFQEJhcqvVApNk7",
+    "miner": "5DaDUHPvhpKSbrawfcF2QfGdyyZekKthu7uUhpmkWaNLFh8u",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x2f31cb46b3c7403eb3816d0b5cbcb5cd81803a97bd860b3184503df2354c6f28:4549962:5": {
+   "settledBlock": "4549962",
+   "blockHash": "0xcae4fffbdc3da8283ced1c41e7772330a47d2418e12b435fe6ed031312dbe1af",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x2f31cb46b3c7403eb3816d0b5cbcb5cd81803a97bd860b3184503df2354c6f28",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5GGckrcCjef7yMrYc8B3mJfq897e3iJdeebD9yjRjyUf2tb4",
+    "miner": "5FYiJP4BRKtCoERG2Rqj2iqvyWda2M1YQbR7gaTMD3hn8L5J",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x305f19a4ff79765f2c0b3327850266515ad15c9bb328d407f35259e75196e692:4549987:5": {
+   "settledBlock": "4549987",
+   "blockHash": "0x9a62d3f8591b87005f7cb1abfbdd11f9f987d5179e5956612e113e2e22176b03",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x305f19a4ff79765f2c0b3327850266515ad15c9bb328d407f35259e75196e692",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5FHp2aaXpytQEB3xMSasoF57vuC36NQNzfF7p5MvPSFFME7w",
+    "miner": "5ECiPWhMucanbEEQrR38VQ6GL8pHS2KCaMgXvDWcWS17AByF",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x3ccb0cb15e977fac51c89fc96023ea46feb2e32a9f119fffa69f50911f5f4811:4549989:5": {
+   "settledBlock": "4549989",
+   "blockHash": "0xfdc39131666eee8b343d8a4392f5e0b2509d3c44cd97dc1fd1eb48c868e13151",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0x3ccb0cb15e977fac51c89fc96023ea46feb2e32a9f119fffa69f50911f5f4811",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xe5b4769c3b61e0d5f303544863e1256c23f66197533e74394266399ee19119f2",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CDLUWfL1c1SLoqEYDwBEnGzPB8E1QprqDuEjMpficXY8BAY",
+    "miner": "5FvMqsxAEZ57pDzSxG4gEr6PPevV8e9azR8dN2zFvjERPZ5L",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xe5b4769c3b61e0d5f303544863e1256c23f66197533e74394266399ee19119f2:4549989:5": {
+   "settledBlock": "4549989",
+   "blockHash": "0xfdc39131666eee8b343d8a4392f5e0b2509d3c44cd97dc1fd1eb48c868e13151",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0x3ccb0cb15e977fac51c89fc96023ea46feb2e32a9f119fffa69f50911f5f4811",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xe5b4769c3b61e0d5f303544863e1256c23f66197533e74394266399ee19119f2",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Dk6nmJ7sCvMr7KQpNmrzo4hvKCMaW2NQZTgfooadosaQ1C8",
+    "miner": "5Chy37pnN4jEixE77wp9pa46tV7rV4n1p5NaEDPJvhYzsaA1",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xb25092a066053451e426f93d75961139a287bf7ccc9363437ce7e440655eb398:4550026:5": {
+   "settledBlock": "4550026",
+   "blockHash": "0x310b35792e9430a37a65de42902c3b00a86050de43f9eba09e89108526d7a1c7",
+   "settled": [
+    {
+     "blockEventIndex": 17,
+     "eventIndex": 5,
+     "channelId": "0xb25092a066053451e426f93d75961139a287bf7ccc9363437ce7e440655eb398",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5E2VCmbPNkxqMnQS5UKqkZ4QwvKfEAofcqGsabYHLD5EJMjT",
+    "miner": "5HmojLPZDHzg6jw3ZYQW9S6esqYUPFqangThhUBKQ4YuAutU",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xe095bc386055ee94545bf0e1cd53b43516c1dd073da8729a5f175332257a6ef2:4550073:5": {
+   "settledBlock": "4550073",
+   "blockHash": "0xf995f173f085b0ff90fc49f0ddf62c012a3eacc35bc0bb791c334f20f626c5dd",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0xe095bc386055ee94545bf0e1cd53b43516c1dd073da8729a5f175332257a6ef2",
+     "minerPaid": "34000000000003",
+     "burned": "0",
+     "aggregateGn": "80"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5H1qRPoPZAL4wa6VAdcFnzwCUKVEoaMD7UtrW3R9pDBjpsNG",
+    "modelHash": "0x1a52c1abe781db051e70ae357f72bb70161ca0c092df0b618f22a9292ba63306",
+    "escrow": "40000000000003"
+   }
+  },
+  "0x02c81b2636b225fd7d30fa7bdbac9395060530f55ee83e998dd48058b888f91b:4550085:5": {
+   "settledBlock": "4550085",
+   "blockHash": "0xcb4c43ae69cd89037acc58fc452275ed200b3c4d63c60a8d5bbfafed5971fb66",
+   "settled": [
+    {
+     "blockEventIndex": 25,
+     "eventIndex": 5,
+     "channelId": "0x02c81b2636b225fd7d30fa7bdbac9395060530f55ee83e998dd48058b888f91b",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 34,
+     "eventIndex": 5,
+     "channelId": "0xc5e1035f52b275613ac6c0d74662b3863f94622b03a037e79467eba13e735bca",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5ER5ACZ9gAEimhq2QMXhDygazuxDURF8RE9SbndfMHqrFqzT",
+    "miner": "5EPcXHMdGjQUMC1gSWhjpe66f6pVpYtqDFHFVoYigoLM6wWK",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xc5e1035f52b275613ac6c0d74662b3863f94622b03a037e79467eba13e735bca:4550085:5": {
+   "settledBlock": "4550085",
+   "blockHash": "0xcb4c43ae69cd89037acc58fc452275ed200b3c4d63c60a8d5bbfafed5971fb66",
+   "settled": [
+    {
+     "blockEventIndex": 25,
+     "eventIndex": 5,
+     "channelId": "0x02c81b2636b225fd7d30fa7bdbac9395060530f55ee83e998dd48058b888f91b",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 34,
+     "eventIndex": 5,
+     "channelId": "0xc5e1035f52b275613ac6c0d74662b3863f94622b03a037e79467eba13e735bca",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Ckr32q4U9ng4NHmT2RrqBQmE4yh1jhSkv5pMFqAs8wrKkj5",
+    "miner": "5EtZRdLh8XTLnRrA4DnoWkzRwLPhCvTLMqtzaAbZkn5A3rNi",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x0714d003b47b6cc4b2f269affae832625a6c5760c35813771e55c7611f74e6d9:4550152:5": {
+   "settledBlock": "4550152",
+   "blockHash": "0xca82c6c8d8d30464e9db142b47a082caa29e8c2f1c24837386eb0bd5e5627945",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x0714d003b47b6cc4b2f269affae832625a6c5760c35813771e55c7611f74e6d9",
+     "minerPaid": "8500000000000000",
+     "burned": "0",
+     "aggregateGn": "46"
+    }
+   ],
+   "channel": {
+    "agent": "5DJ8PiUQf3WEugSnDnkWZxrnv7nZrwLXaTG1UXqANVms4iMe",
+    "miner": "5HdTbhVY9jZCsfJVFENYF89hRfkBvoby2YxPest3XLLRhnrt",
+    "modelHash": "0x1a52c1abe781db051e70ae357f72bb70161ca0c092df0b618f22a9292ba63306",
+    "escrow": "10000000000000000"
+   }
+  },
+  "0x4e89b3e34f5cde8fde1ae1b04f53c48e2e1bccd0380bd187026d18b2934ed2e9:4550223:5": {
+   "settledBlock": "4550223",
+   "blockHash": "0x8c60a70b31f36ca6f8669a1f6184dcfa6a144b81670cd5bdabb439730a9b0935",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0x4e89b3e34f5cde8fde1ae1b04f53c48e2e1bccd0380bd187026d18b2934ed2e9",
+     "minerPaid": "5525000000003",
+     "burned": "0",
+     "aggregateGn": "13"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5D9uTgFbaNx7YbXRcckf47xvsegyTYbMXWgLeahGY2VBWw5x",
+    "modelHash": "0x1a52c1abe781db051e70ae357f72bb70161ca0c092df0b618f22a9292ba63306",
+    "escrow": "6500000000003"
+   }
+  },
+  "0x22ef5b61985cc7288b846ddd3249f1f3fb8bfc333f35699f79c8af35f1f83ef9:4550248:5": {
+   "settledBlock": "4550248",
+   "blockHash": "0xec3ed5da6a0d7b85e877cdd7ed682fb882f42dd6a23e8b460946ece8e8dfb69d",
+   "settled": [
+    {
+     "blockEventIndex": 25,
+     "eventIndex": 5,
+     "channelId": "0x22ef5b61985cc7288b846ddd3249f1f3fb8bfc333f35699f79c8af35f1f83ef9",
+     "minerPaid": "2312425000000004",
+     "burned": "0",
+     "aggregateGn": "5441"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5EEwCVsYMJa4Sc9J9w3k2Rjwpvd2UghgkJacuT5RRTqyhEiR",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "2720500000000004"
+   }
+  },
+  "0x5e8b30e6cf42362536dce2efa276272bed0e2a2727988b9952e62384added62e:4550299:5": {
+   "settledBlock": "4550299",
+   "blockHash": "0x815facd15f1fb389a83edaeec546564f744907348e1a3ce756e941fd4e900d2f",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x5e8b30e6cf42362536dce2efa276272bed0e2a2727988b9952e62384added62e",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5GGggE17JRwer2xVhSpKx5tPcDUKiEkufaHtBfMnzJzDzt2u",
+    "miner": "5Cm3kF5R4dcX3zgpab8DJTNBWZsZNF4njWepni1zqeSDuxVc",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x9e6777dac2e05f4ed3fd1ebf8b2936f16e47ccb3203e09c801ef95bfa465c689:4550430:5": {
+   "settledBlock": "4550430",
+   "blockHash": "0x84676f87bc9cd4dce002ec6214556d2377bb1be267d7c7f161dae3d07706fc7e",
+   "settled": [
+    {
+     "blockEventIndex": 63,
+     "eventIndex": 5,
+     "channelId": "0x9e6777dac2e05f4ed3fd1ebf8b2936f16e47ccb3203e09c801ef95bfa465c689",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CrRbo5hGqE7T6AwXDB7JSsDmJe2VU5TCADJmkqYwRnSx2bq",
+    "miner": "5G16iKKi4UG6SNhDhZcyFMqQLWGYhsr28r9ehV1UsTWDTtcU",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xaa5c4787198cf2c1f7d4b1577ad8b453d9066ca8184178f0b063f90daa6491e7:4550434:5": {
+   "settledBlock": "4550434",
+   "blockHash": "0x563ac6087492bd07dd9493b0628da6910a73e181fc153ce455dfdb7becf49e67",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xaa5c4787198cf2c1f7d4b1577ad8b453d9066ca8184178f0b063f90daa6491e7",
+     "minerPaid": "275825000000003",
+     "burned": "0",
+     "aggregateGn": "649"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5EEwCVsYMJa4Sc9J9w3k2Rjwpvd2UghgkJacuT5RRTqyhEiR",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "324500000000003"
+   }
+  },
+  "0x435ed203dbdfdd78ad732fc1ac33eb122b6c43b9a166b026be711a95422d7857:4550458:5": {
+   "settledBlock": "4550458",
+   "blockHash": "0x81b588feac08c0a2c0298b5b309d6cd364128dd76276e9e4e36a75150cbaf9e3",
+   "settled": [
+    {
+     "blockEventIndex": 18,
+     "eventIndex": 5,
+     "channelId": "0x435ed203dbdfdd78ad732fc1ac33eb122b6c43b9a166b026be711a95422d7857",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5ECtifN794J9g6PjhPH4kD2JCTKN2mjepnr6PwcVcxhQQEwe",
+    "miner": "5FcPv277tkYptSXuPcguF1bmjtt9GS6uemw4Pj8mEuoe6bA3",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xc2e5616da6372c84746bade7ed7ffff4eff4bc9d81c2f58cadcbcd096e943b9d:4550559:5": {
+   "settledBlock": "4550559",
+   "blockHash": "0x95c40acd9c91b170034c028afa62376c500fddf4f48eeb849ec6c13efb68f8d7",
+   "settled": [
+    {
+     "blockEventIndex": 17,
+     "eventIndex": 5,
+     "channelId": "0xc2e5616da6372c84746bade7ed7ffff4eff4bc9d81c2f58cadcbcd096e943b9d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5F2QTcNgpLipiV2YLT2gwGsz5satAZSFZPrH4wkeSzrkFLc3",
+    "miner": "5DMLUie7CQrL26kj7YWnTCpQ6ZsS6JhQPSeTEK4vTePka5AR",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xd5879f89be4d025162478026a748bf1e555c092145a0f89874e6358e64cc5cfe:4550609:5": {
+   "settledBlock": "4550609",
+   "blockHash": "0xce43393c9a442391d2dfa5e8b520638762a29e80d69ad4c6c6b545d42219949f",
+   "settled": [
+    {
+     "blockEventIndex": 27,
+     "eventIndex": 5,
+     "channelId": "0xd5879f89be4d025162478026a748bf1e555c092145a0f89874e6358e64cc5cfe",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Fq5jmD4NVBfVtxwpDtpfsWYLpee7Ww2oJBnVpqRXxKu6hC3",
+    "miner": "5ECDmNGkRG9JndkH2Hs21ndNgRQQ1eGVUPGMV66easB9JFyv",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xe92470255d47dc75fbe211867db3681fbd5d852262ca97f67756a24bde7a3972:4550808:5": {
+   "settledBlock": "4550808",
+   "blockHash": "0x944fecbf4e5709feabf596b2831e42ea787532e812fec5754d81a95bc50be230",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0xe92470255d47dc75fbe211867db3681fbd5d852262ca97f67756a24bde7a3972",
+     "minerPaid": "29750000000003",
+     "burned": "0",
+     "aggregateGn": "70"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5FxNsxX5P5uWCKNbNW2eYdxQcQcK5nzdFmjhxJVwpjLLzq9A",
+    "modelHash": "0x1a52c1abe781db051e70ae357f72bb70161ca0c092df0b618f22a9292ba63306",
+    "escrow": "35000000000003"
+   }
+  },
+  "0xd9c9fcbef5765d2bbf0b8729e1d887821027128c4c19816640f044d4d5757847:4550861:5": {
+   "settledBlock": "4550861",
+   "blockHash": "0xe474ec5a37213d068062324c52640cff0a5c42f82fbf44bf90b02959b04485a8",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xd9c9fcbef5765d2bbf0b8729e1d887821027128c4c19816640f044d4d5757847",
+     "minerPaid": "2510900000000007",
+     "burned": "0",
+     "aggregateGn": "5908"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5EEwCVsYMJa4Sc9J9w3k2Rjwpvd2UghgkJacuT5RRTqyhEiR",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "2954000000000008"
+   }
+  },
+  "0xcd63c4bb18dc0f9f6160489ea8d17c64bda8aeec5e2883938b19f1e755b86f4b:4550918:5": {
+   "settledBlock": "4550918",
+   "blockHash": "0xb144214dd0124def07e93ffc24ec6898bb9f56da36ddb1dd232cca8e5bf1cb77",
+   "settled": [
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xcd63c4bb18dc0f9f6160489ea8d17c64bda8aeec5e2883938b19f1e755b86f4b",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5FKnsEboPh8sVzVtKV3NWwdZjB4URzjdGrsZtAt89P9SJb13",
+    "miner": "5F23sPc3GLrD8ZCCvqKu3Y8KcBpkuxpTQsUfJVyMkkjoRyif",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x6fc43612e66234630c85f75b6f555682d00c16d2c66b24775f69742b70bef49a:4550983:5": {
+   "settledBlock": "4550983",
+   "blockHash": "0x245f62e017f2a8595e8d4d211f1d0070b6744450f13f11df0550690e9e3ec917",
+   "settled": [
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0x6fc43612e66234630c85f75b6f555682d00c16d2c66b24775f69742b70bef49a",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5GsKq2nVPHgc4uk228QgW6MzTeauHVKYMbVwDoeyw7wZ74ix",
+    "miner": "5CFMHMQ12hs5HaDoiMgduMiMvfoebe91c6PTXyeYKEYnwmbb",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xe07fbc3b66a7830d32271f0d7fab540f2431cd21ba948436da304ed8bb0e57a1:4551017:5": {
+   "settledBlock": "4551017",
+   "blockHash": "0x5a467ef23ab6eaee892ec88d9eb26d4d4de3f7d8594c410fc5cef35f01621aae",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xe07fbc3b66a7830d32271f0d7fab540f2431cd21ba948436da304ed8bb0e57a1",
+     "minerPaid": "2975000000003",
+     "burned": "0",
+     "aggregateGn": "7"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5D9uTgFbaNx7YbXRcckf47xvsegyTYbMXWgLeahGY2VBWw5x",
+    "modelHash": "0x1a52c1abe781db051e70ae357f72bb70161ca0c092df0b618f22a9292ba63306",
+    "escrow": "3500000000003"
+   }
+  },
+  "0xca1bf38d3bfa6aceca15b89460651973fd61fd53775ff90102bff73ad629a418:4551035:5": {
+   "settledBlock": "4551035",
+   "blockHash": "0xcab6d43472efcdfdf7aedd007aafd9bd9906163ed368b0d17599925b5d3938c6",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xca1bf38d3bfa6aceca15b89460651973fd61fd53775ff90102bff73ad629a418",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5FKnUWoJAgpD6FRD3s5NGAfQrEW2ryYkRfDgwxt799L8zhQZ",
+    "miner": "5DSNWyz659oX4ooAhM9mVzDR4amGy8Lk8D1yexUSUCANx482",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x1208edfbd28dc2a78deb58c9b6690fd58be0a0ba3aaa46584adc4b92050b201e:4551049:5": {
+   "settledBlock": "4551049",
+   "blockHash": "0x613bc720357354efd9727eb945aa67bd1fceb1443ac078ddb51948fc87839c3d",
+   "settled": [
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xd550ab76a34b3fadc54a6925d5d209ea959c29f3ed711d37b976d052924dce40",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 28,
+     "eventIndex": 5,
+     "channelId": "0x1208edfbd28dc2a78deb58c9b6690fd58be0a0ba3aaa46584adc4b92050b201e",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5HYVVAXYyuBJftEk2WAnSFvkEKMWCyUmjNzr8FHL9aCbrnt8",
+    "miner": "5CA6LAXuEp69i1hSuBEAvyiJk1ddqQabxFt4eADdzKm9VzmV",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xd550ab76a34b3fadc54a6925d5d209ea959c29f3ed711d37b976d052924dce40:4551049:5": {
+   "settledBlock": "4551049",
+   "blockHash": "0x613bc720357354efd9727eb945aa67bd1fceb1443ac078ddb51948fc87839c3d",
+   "settled": [
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xd550ab76a34b3fadc54a6925d5d209ea959c29f3ed711d37b976d052924dce40",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 28,
+     "eventIndex": 5,
+     "channelId": "0x1208edfbd28dc2a78deb58c9b6690fd58be0a0ba3aaa46584adc4b92050b201e",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5FjKsAMovWpVPFkbqX7sErhxfdhmc1owPuWbGn3Xg7H6Tcie",
+    "miner": "5Dnc5WcP8kFiwk88hPs7sSqqPreZgr5pHy7cN9WshXzWeniE",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xcac2fd690bdc75e454cfbfc649db9c003d9c3ba76375abf610ca15c571b20c84:4551050:5": {
+   "settledBlock": "4551050",
+   "blockHash": "0x1c074a13aaa7896ffd6afbe84bbf9901c8f3f02a234112dc2a1c3b1b05f309bf",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xcac2fd690bdc75e454cfbfc649db9c003d9c3ba76375abf610ca15c571b20c84",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Hmsu7Y13mFSzRUDvK87GaiBjsfGaVtSkQPKRMqdvLPgfBdS",
+    "miner": "5HNXAZNBE4BGpedxdVPpmWyK1MMmeUrD7szL5DCsq6jbMDMj",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x16e78dbb405084bcf0891ff0345360cb385b14d4fc2432bb4997bd698e9dd7a1:4551051:5": {
+   "settledBlock": "4551051",
+   "blockHash": "0x21705c23d03e05d5a17b542f8d3364b1a8b8ef02bf59d513260c97199acffccd",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x16e78dbb405084bcf0891ff0345360cb385b14d4fc2432bb4997bd698e9dd7a1",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 20,
+     "eventIndex": 5,
+     "channelId": "0x8af9ed4fb7434e63bcfac374266ad3d300053ac976f26aa49531113615067b8d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5E7kmFp1vhdnmVQUX9D9vMrwboGp7UHEoitGX3wyo9RgiZ61",
+    "miner": "5FYyyERBuXNmgFNVC8D84vY1bvRdjDc6WSkekXg2eRzNQvEC",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x8af9ed4fb7434e63bcfac374266ad3d300053ac976f26aa49531113615067b8d:4551051:5": {
+   "settledBlock": "4551051",
+   "blockHash": "0x21705c23d03e05d5a17b542f8d3364b1a8b8ef02bf59d513260c97199acffccd",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x16e78dbb405084bcf0891ff0345360cb385b14d4fc2432bb4997bd698e9dd7a1",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 20,
+     "eventIndex": 5,
+     "channelId": "0x8af9ed4fb7434e63bcfac374266ad3d300053ac976f26aa49531113615067b8d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5HWLfPgCEefLBk5YNtdpNEvFVaD79uBoQx661NYrU7gQwLkv",
+    "miner": "5DM6qp56dsCGQ2VaQENJss4P4LCaw3r8jcHsNtUAyx2jkvqy",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xf851e849c59888de8fa79dcd2615e5ad08b69349693aa6b814d0e9350130c195:4551088:5": {
+   "settledBlock": "4551088",
+   "blockHash": "0x1b5bdafbb8bcf35be2c42f4822929d49a1892864f4897fe3ecd568e23416e58e",
+   "settled": [
+    {
+     "blockEventIndex": 24,
+     "eventIndex": 5,
+     "channelId": "0xf851e849c59888de8fa79dcd2615e5ad08b69349693aa6b814d0e9350130c195",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5EZ6UJGtTJdBNWDdjbBByMoHkJ2fG9muqWFECMqQcYn2gwPS",
+    "miner": "5E7ksUfoBkcgxuLMEiUSLg8iSwYj9W4Ab8cX57AvrsZ4eMVV",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xa0eeb74e83dde59a40e982bb72a38ff1c3e03ffc493c8986a3b8b113115d70aa:4551090:5": {
+   "settledBlock": "4551090",
+   "blockHash": "0x874da66c08750b3f6354cf379bd45461e4f0a4ebb4493e244844cfe4030702e2",
+   "settled": [
+    {
+     "blockEventIndex": 31,
+     "eventIndex": 5,
+     "channelId": "0xa0eeb74e83dde59a40e982bb72a38ff1c3e03ffc493c8986a3b8b113115d70aa",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Dkr2sKtkMvomZiy4gQ7qoqTwxDoWpMsvJiSW5Gkr75T3e17",
+    "miner": "5FCqg9qKTTTUgJzkGCEVF5GbWXgR2TP62pnRgTn97fyppvMb",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x6c7fad643bc2aae93d0df5212f79aa61c20d47095b3c56300badff2b487868e8:4551096:5": {
+   "settledBlock": "4551096",
+   "blockHash": "0xa884e8e070c06252aac3ada9425717141b5b300ee2bd40cdf648712d5d061826",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0x6c7fad643bc2aae93d0df5212f79aa61c20d47095b3c56300badff2b487868e8",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5FHx2esruYDficmvveB2RfP2fhtwUK4T7NF3uVseKtsiACbE",
+    "miner": "5CZybJgUmojRfH1s4Kk8jkvzPRyKD3rC6sJQk4XfBNRtTMaf",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x2965c1973c76a1d9be290123bd3a7596680ce9434ca43fbb8c58a41e1876ea39:4551158:5": {
+   "settledBlock": "4551158",
+   "blockHash": "0xafe864e504b792ad158740586dced4476e144411fd30e125e90b9e0e9fd5dc4e",
+   "settled": [
+    {
+     "blockEventIndex": 25,
+     "eventIndex": 5,
+     "channelId": "0x2965c1973c76a1d9be290123bd3a7596680ce9434ca43fbb8c58a41e1876ea39",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Dndg5yShNt1RBexs8HwHneJJ4sepjPw6ggUbHwXQQ27XDB8",
+    "miner": "5GdzEoLZbZpgiUZWfi47wWsBGBneeEvfY9bY5cRbpo8kB6j2",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x534b5f59bef028cb8bc56b00369302c9c3502229345aea7edb89c584f935d17f:4551165:5": {
+   "settledBlock": "4551165",
+   "blockHash": "0x75537ef2a6d7b5b74259c19b836c56fab540b9b578f532469d0c89491d5ba299",
+   "settled": [
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0x534b5f59bef028cb8bc56b00369302c9c3502229345aea7edb89c584f935d17f",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5ES4jocU1RSJzE5eTL35RoMqngh2vjUQacACMN1jkDd2oRuq",
+    "miner": "5GjS96BsGUhawkiRxvcnpK9NuyTBHh5BiEfpCKpvv1GPcaYp",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x5f5860408fd5993241b55d03c0ada9156fd3054369874757c662ecd7cd542fa8:4551168:5": {
+   "settledBlock": "4551168",
+   "blockHash": "0x3dc9d0da561786b66ae5ec3a6c8f86b77a66bbed9a692064a05672797201d114",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x5f5860408fd5993241b55d03c0ada9156fd3054369874757c662ecd7cd542fa8",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CFqNTuuGGupzAbe5VMUb6XQHuvxrNzoxJFQEJhcqvVApNk7",
+    "miner": "5DaDUHPvhpKSbrawfcF2QfGdyyZekKthu7uUhpmkWaNLFh8u",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xaddd79ef00206214af7fbad45534334a0926c90a5c4f89060c32538961272b45:4551213:5": {
+   "settledBlock": "4551213",
+   "blockHash": "0xcb532efd6a1d03f48cc56f9f9a4040960a0a39ffa46658a6ef8cf3d0ce10fed2",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xaddd79ef00206214af7fbad45534334a0926c90a5c4f89060c32538961272b45",
+     "minerPaid": "552500000000003",
+     "burned": "0",
+     "aggregateGn": "1300"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5EEwCVsYMJa4Sc9J9w3k2Rjwpvd2UghgkJacuT5RRTqyhEiR",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "650000000000003"
+   }
+  },
+  "0xed4776e24259d6baf97a5d5b8eaeb113595a36e4bce2c453e1f3cd02ec1b5d69:4551284:5": {
+   "settledBlock": "4551284",
+   "blockHash": "0x53ecc4f942b34fddafc9e7d67e79519cfe38f62e86808d2bfe1b2d2fec623ce8",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xed4776e24259d6baf97a5d5b8eaeb113595a36e4bce2c453e1f3cd02ec1b5d69",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Ff3bjDYFRcUBKrpF49V11ZYRe3gSqBAECZUDkKS2Q93FqcJ",
+    "miner": "5EqM5hpryTAbZDRaoZC3LgMbrKUK5rz85qzLsrw7MBv5L8tz",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xdadd7ff57bd828c4357554e01db1582cae35b1400b9f3c67068b1a92cafe1e25:4551343:5": {
+   "settledBlock": "4551343",
+   "blockHash": "0x9d4c8749bd56273081964d0711e68a5cf198c0daa216526cb4c81d6ffa1f3737",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xdadd7ff57bd828c4357554e01db1582cae35b1400b9f3c67068b1a92cafe1e25",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CdDHeYSBBEkRAVoZFnpEBseX38UUW25FqboCu2gvUH9LJz1",
+    "miner": "5HbvZYmEpNZdiJ35vBj7kVGAMqFBMry28sLfY5sUSrXk3P8A",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x264c14c5ab7e2568db13a58de74f25c81b87aaebe433011efb75c2be3b4959dc:4551348:5": {
+   "settledBlock": "4551348",
+   "blockHash": "0x88a620fb9d910c1d9114b8bb404b5bddb281f6d1a9c29d0d4671ecd06538d4a8",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0xc5a1b06579618e3c3fd09c3a8536c39ecccb4902043a344074f71a12b0e9a958",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xb03557cefe4b8384e4c9a28b804ea4dcf1180b30a9f3d1c13c85efd43eff8ac3",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 28,
+     "eventIndex": 5,
+     "channelId": "0x49b4459a8ee276cd7c6675fbb78de449ed85fc359ff05056bbbdc0373efc846f",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 37,
+     "eventIndex": 5,
+     "channelId": "0x41746643c0b483d85bea20a19a37f73fca86709985ce84bcba4dfbf5b082d76d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 46,
+     "eventIndex": 5,
+     "channelId": "0x264c14c5ab7e2568db13a58de74f25c81b87aaebe433011efb75c2be3b4959dc",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CyCo9n3zoK376LtbHBJTFieaXLYNkbFxiJxj4k5fMVzeuH1",
+    "miner": "5E9QVx8WSxha5ku3txwgbNudYq3za9Hx3fAK1WcDDJ4EUswV",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x41746643c0b483d85bea20a19a37f73fca86709985ce84bcba4dfbf5b082d76d:4551348:5": {
+   "settledBlock": "4551348",
+   "blockHash": "0x88a620fb9d910c1d9114b8bb404b5bddb281f6d1a9c29d0d4671ecd06538d4a8",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0xc5a1b06579618e3c3fd09c3a8536c39ecccb4902043a344074f71a12b0e9a958",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xb03557cefe4b8384e4c9a28b804ea4dcf1180b30a9f3d1c13c85efd43eff8ac3",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 28,
+     "eventIndex": 5,
+     "channelId": "0x49b4459a8ee276cd7c6675fbb78de449ed85fc359ff05056bbbdc0373efc846f",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 37,
+     "eventIndex": 5,
+     "channelId": "0x41746643c0b483d85bea20a19a37f73fca86709985ce84bcba4dfbf5b082d76d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 46,
+     "eventIndex": 5,
+     "channelId": "0x264c14c5ab7e2568db13a58de74f25c81b87aaebe433011efb75c2be3b4959dc",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5GGckrcCjef7yMrYc8B3mJfq897e3iJdeebD9yjRjyUf2tb4",
+    "miner": "5FYiJP4BRKtCoERG2Rqj2iqvyWda2M1YQbR7gaTMD3hn8L5J",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x49b4459a8ee276cd7c6675fbb78de449ed85fc359ff05056bbbdc0373efc846f:4551348:5": {
+   "settledBlock": "4551348",
+   "blockHash": "0x88a620fb9d910c1d9114b8bb404b5bddb281f6d1a9c29d0d4671ecd06538d4a8",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0xc5a1b06579618e3c3fd09c3a8536c39ecccb4902043a344074f71a12b0e9a958",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xb03557cefe4b8384e4c9a28b804ea4dcf1180b30a9f3d1c13c85efd43eff8ac3",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 28,
+     "eventIndex": 5,
+     "channelId": "0x49b4459a8ee276cd7c6675fbb78de449ed85fc359ff05056bbbdc0373efc846f",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 37,
+     "eventIndex": 5,
+     "channelId": "0x41746643c0b483d85bea20a19a37f73fca86709985ce84bcba4dfbf5b082d76d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 46,
+     "eventIndex": 5,
+     "channelId": "0x264c14c5ab7e2568db13a58de74f25c81b87aaebe433011efb75c2be3b4959dc",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5F1QQLVH1cxGbEyCkiZKs7w9jodc6tndX6iaybgDBiDmuDBp",
+    "miner": "5Fj8rM47Et2inbumzi5hJPgx59nzypj6mhTqJfybZTNgLA3f",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xb03557cefe4b8384e4c9a28b804ea4dcf1180b30a9f3d1c13c85efd43eff8ac3:4551348:5": {
+   "settledBlock": "4551348",
+   "blockHash": "0x88a620fb9d910c1d9114b8bb404b5bddb281f6d1a9c29d0d4671ecd06538d4a8",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0xc5a1b06579618e3c3fd09c3a8536c39ecccb4902043a344074f71a12b0e9a958",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xb03557cefe4b8384e4c9a28b804ea4dcf1180b30a9f3d1c13c85efd43eff8ac3",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 28,
+     "eventIndex": 5,
+     "channelId": "0x49b4459a8ee276cd7c6675fbb78de449ed85fc359ff05056bbbdc0373efc846f",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 37,
+     "eventIndex": 5,
+     "channelId": "0x41746643c0b483d85bea20a19a37f73fca86709985ce84bcba4dfbf5b082d76d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 46,
+     "eventIndex": 5,
+     "channelId": "0x264c14c5ab7e2568db13a58de74f25c81b87aaebe433011efb75c2be3b4959dc",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CDLUWfL1c1SLoqEYDwBEnGzPB8E1QprqDuEjMpficXY8BAY",
+    "miner": "5FvMqsxAEZ57pDzSxG4gEr6PPevV8e9azR8dN2zFvjERPZ5L",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xc5a1b06579618e3c3fd09c3a8536c39ecccb4902043a344074f71a12b0e9a958:4551348:5": {
+   "settledBlock": "4551348",
+   "blockHash": "0x88a620fb9d910c1d9114b8bb404b5bddb281f6d1a9c29d0d4671ecd06538d4a8",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0xc5a1b06579618e3c3fd09c3a8536c39ecccb4902043a344074f71a12b0e9a958",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 19,
+     "eventIndex": 5,
+     "channelId": "0xb03557cefe4b8384e4c9a28b804ea4dcf1180b30a9f3d1c13c85efd43eff8ac3",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 28,
+     "eventIndex": 5,
+     "channelId": "0x49b4459a8ee276cd7c6675fbb78de449ed85fc359ff05056bbbdc0373efc846f",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 37,
+     "eventIndex": 5,
+     "channelId": "0x41746643c0b483d85bea20a19a37f73fca86709985ce84bcba4dfbf5b082d76d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    },
+    {
+     "blockEventIndex": 46,
+     "eventIndex": 5,
+     "channelId": "0x264c14c5ab7e2568db13a58de74f25c81b87aaebe433011efb75c2be3b4959dc",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Dw2dMGPZcxKCNxkFL8o6qRYNdzqMfx3RGzAaTzkEXdr7PfY",
+    "miner": "5GNefLSSb6QjrH2BnV5rcB3Whib2eiQPmqHga7mqzUdotymq",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x7fbb64b2a9e7c188d05fc2a15d2ca5646b43d61d0f4505b43b68b20de18beff7:4551349:5": {
+   "settledBlock": "4551349",
+   "blockHash": "0x2098f03946d1cf014e486f2519951648b1aafd9422bde59af7fb89dff98dda1c",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x7fbb64b2a9e7c188d05fc2a15d2ca5646b43d61d0f4505b43b68b20de18beff7",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5HYqQfXQTqeHZuLKciKNtKtbuw2DhHLhVTJiRBaoZkJHqBCs",
+    "miner": "5D2Qy1Gskp4Pr5xuhFfZwaPdciK6XzQrLMVPTFXWZbdBHeZ7",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x785d2b411673be2c7c40ee10e5094a2407671d5616dfca3be392f4ee73852d27:4551465:5": {
+   "settledBlock": "4551465",
+   "blockHash": "0x6d32d1fa64cbcb91d5f923c722903b7ee88bcbc17e2a1293c7fe81d5e9ea86de",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x785d2b411673be2c7c40ee10e5094a2407671d5616dfca3be392f4ee73852d27",
+     "minerPaid": "1433100000000003",
+     "burned": "0",
+     "aggregateGn": "3372"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5EEwCVsYMJa4Sc9J9w3k2Rjwpvd2UghgkJacuT5RRTqyhEiR",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "1686000000000003"
+   }
+  },
+  "0xfb5a5f1586066a0240e17368bb01af6a944c9b81c6f76bf56cfc7cd7aabd0da4:4551565:5": {
+   "settledBlock": "4551565",
+   "blockHash": "0x1faecb29c229dc0d58f2aa20e7d5fe801f49526dc60e65ba0bcbe6a04bb7da8f",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xfb5a5f1586066a0240e17368bb01af6a944c9b81c6f76bf56cfc7cd7aabd0da4",
+     "minerPaid": "288575000000003",
+     "burned": "0",
+     "aggregateGn": "679"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5EEwCVsYMJa4Sc9J9w3k2Rjwpvd2UghgkJacuT5RRTqyhEiR",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "339500000000003"
+   }
+  },
+  "0xbb2440ef38c4305296525dd2b6d4c7b3f9397fb95abaf1e33d9b98f30e99e3c1:4551582:5": {
+   "settledBlock": "4551582",
+   "blockHash": "0x472e321f9c7eeb4317cc3e57025e5e31ac77f3bccb8486fb0b67a112cd70b0db",
+   "settled": [
+    {
+     "blockEventIndex": 25,
+     "eventIndex": 5,
+     "channelId": "0xbb2440ef38c4305296525dd2b6d4c7b3f9397fb95abaf1e33d9b98f30e99e3c1",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5GLNozBhEHZMqzr3TMhPXfzYp12SZ8cCkes2d5xX919yixWA",
+    "miner": "5CAtn4aHDgFNxEAXt2EsNvwGexcYv34hdpWbJeoQDuAsGgfR",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x04882d95dc21464332a4bd4a26f187a7369cf2a88b7b78e437b893ba4fd89d6d:4551800:5": {
+   "settledBlock": "4551800",
+   "blockHash": "0x3029838cb664c40823fa5531c0549d93a2ee7d4224c68a8bdb00ebdc0181263a",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x04882d95dc21464332a4bd4a26f187a7369cf2a88b7b78e437b893ba4fd89d6d",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5GxsfNKJCFdzae6yH9DjvMEe9eyMRcTQQ85C2Qm138BdUFnn",
+    "miner": "5GNudGDLgdzbdDEYuPHhGGD4qYE3MFyqZDqQmuDzBBg7HGGF",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xf47ab65c202d4f90523c89475251508e3d82ffbf1b1b2d4521af131868dcec71:4551801:5": {
+   "settledBlock": "4551801",
+   "blockHash": "0xc346bd42951909e3c64d195ce81815fbc3bc55b47829c23214e06cd2ae3b5bf5",
+   "settled": [
+    {
+     "blockEventIndex": 21,
+     "eventIndex": 5,
+     "channelId": "0xf47ab65c202d4f90523c89475251508e3d82ffbf1b1b2d4521af131868dcec71",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "292480"
+    }
+   ],
+   "channel": {
+    "agent": "5Dk6nmJ7sCvMr7KQpNmrzo4hvKCMaW2NQZTgfooadosaQ1C8",
+    "miner": "5Chy37pnN4jEixE77wp9pa46tV7rV4n1p5NaEDPJvhYzsaA1",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xfd8fc63d664cef3d434b1c17d18a9712ab5137f67eeb2c702b7fb92b1b9a0cb7:4551818:5": {
+   "settledBlock": "4551818",
+   "blockHash": "0x712420a70429d2dd952d9350ff7ee3ffe42e0c5cf3678464ae9b802561d0a3b3",
+   "settled": [
+    {
+     "blockEventIndex": 53,
+     "eventIndex": 5,
+     "channelId": "0xfd8fc63d664cef3d434b1c17d18a9712ab5137f67eeb2c702b7fb92b1b9a0cb7",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5EUoyHUPzDHy1cphGNpiYjrE1kJvBiFYzAZkGo9kJa1CCmir",
+    "miner": "5DymBEnXuhgmu7A1ABqVthLSwQc7gkvDDA71p8rkfzAFjmf6",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x4f6f0133df6d77c2cc6c6cc9a8d1a1fc30efc0d132d01465a0a244c079e6ac9d:4551853:5": {
+   "settledBlock": "4551853",
+   "blockHash": "0xd7b1536b854a95c95ecabdc5e3cc9011f2cf97fb326be230007503001d3414f6",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x4f6f0133df6d77c2cc6c6cc9a8d1a1fc30efc0d132d01465a0a244c079e6ac9d",
+     "minerPaid": "6096625000000006",
+     "burned": "0",
+     "aggregateGn": "14345"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5EEwCVsYMJa4Sc9J9w3k2Rjwpvd2UghgkJacuT5RRTqyhEiR",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "7172500000000007"
+   }
+  },
+  "0x0bfd3e58893ad76877b13d78e471d50e66316abf6d39d7724fcb77ea56e9a560:4551855:5": {
+   "settledBlock": "4551855",
+   "blockHash": "0x4a265f0e83e008d638b81ceae0328e94d60fdd48c71b0b961554a670d9a24ca3",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x0bfd3e58893ad76877b13d78e471d50e66316abf6d39d7724fcb77ea56e9a560",
+     "minerPaid": "85000000000000",
+     "burned": "0",
+     "aggregateGn": "561"
+    }
+   ],
+   "channel": {
+    "agent": "5DFEJht53gE5XGtL746kX3P3hTJKro6BrD9aC5bFKKVVZAtk",
+    "miner": "5HKiGNFSqSyEMVMjjr8JBKkkppytaqFZCRm27KGbCeHhUq92",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "100000000000000"
+   }
+  },
+  "0x26b822b85415d6fec87b9c5282d523d010a39bb59df78edcd4ac358cf443e721:4551986:5": {
+   "settledBlock": "4551986",
+   "blockHash": "0x6960706206464fc03c7fc7bfe68459e8b18e984c6899f9f8e47ee8475db8a0a7",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x26b822b85415d6fec87b9c5282d523d010a39bb59df78edcd4ac358cf443e721",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5ESBEK4voxgwmoMnQzVD6HSTxEKrZ2PBRUiEnyR6QUNCTQzr",
+    "miner": "5DWk7Ay6xH8352qSc1vZDvDgLNRKyqWristcGQ4vrQpbFQcM",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xda6b26b3e7e23a079ca7147c20be61d6a07ca839f9604b615d233d7f3a3f8134:4552102:5": {
+   "settledBlock": "4552102",
+   "blockHash": "0xface98f4db5471e2fa3536f6b9180edad0a5466a4e0bf1ed44fa9340f3f0cb51",
+   "settled": [
+    {
+     "blockEventIndex": 10,
+     "eventIndex": 5,
+     "channelId": "0xda6b26b3e7e23a079ca7147c20be61d6a07ca839f9604b615d233d7f3a3f8134",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5FHp2aaXpytQEB3xMSasoF57vuC36NQNzfF7p5MvPSFFME7w",
+    "miner": "5ECiPWhMucanbEEQrR38VQ6GL8pHS2KCaMgXvDWcWS17AByF",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xfc11912d97083861e2c9a2f5c64a3711889f1226d74c5ad823c1c61056b3fa03:4552117:5": {
+   "settledBlock": "4552117",
+   "blockHash": "0xeb591c940532fedef217896908055339ddbed2faf32fac6748d79e63375a27d0",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xfc11912d97083861e2c9a2f5c64a3711889f1226d74c5ad823c1c61056b3fa03",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CoEUvEw43huV12YDqZuMnaB2HGjSoyynADAdTDGTs9xtdNx",
+    "miner": "5FCv9utWu4ewTrFJmn9BNuNb2gtmApHzQCSC9F3WK5u416xp",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xcd72aef1d9526a6fe15f0fd7058b9adf3ee95a8900d792513b13cc96a9a7a6b6:4552217:5": {
+   "settledBlock": "4552217",
+   "blockHash": "0x94930a3a65f14e40ca957a60d4a56c3a86668ee07736e5f0291164a337572f33",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xcd72aef1d9526a6fe15f0fd7058b9adf3ee95a8900d792513b13cc96a9a7a6b6",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Fjfqcn4hysWF35YWgCKrUTcK5a6h9CJYsrcpbeXWKVskZss",
+    "miner": "5CyGykYRCYC7GoWwGxs6wHMF2XTLktgh5qrn9GNTEekttNXG",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0xc001c2c8bffdb599df91035ac60647a824a74c19282b7ba5b2317a4ca4d1b747:4552226:5": {
+   "settledBlock": "4552226",
+   "blockHash": "0x0a0ebd75502943ad51f7c26a42f15a70500192fd4e05868a84c9a7ce166597c4",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xc001c2c8bffdb599df91035ac60647a824a74c19282b7ba5b2317a4ca4d1b747",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5Cfwsu8QTzqhEDqXum56psTi7Pqr7fofCLRkGC7Ka4QYXP18",
+    "miner": "5Ef1L6t6GxM63rTerExQeb1VsFHW6AvvTo66MzhvNYoGUJYZ",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x1d1774ff8e7f5800d9dc5a53aaf30817ff1eef640c796311dd1ebf446b532382:4552265:5": {
+   "settledBlock": "4552265",
+   "blockHash": "0x0cb27868c4e3f56610dedade334094799d585bf51e9c4db4efe93a9241dcce1c",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x1d1774ff8e7f5800d9dc5a53aaf30817ff1eef640c796311dd1ebf446b532382",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5GxtfvaT5mdWvPJjWD8CDvPi3JS4AwgBEHzKhBq27EyccQJN",
+    "miner": "5HU4zQrkLD1eCb5MzCqGSosBeB9gZqnEmkKsD6LniydSoC4B",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x4c5b470d5a696bd9d3bb3f37037399020e3f49f1a79343364b9f02ebcb368413:4552278:5": {
+   "settledBlock": "4552278",
+   "blockHash": "0x3fe74b947c52a6d3b0b063b2e09f98700ad4b89f54d020f87772d27a1445579e",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x4c5b470d5a696bd9d3bb3f37037399020e3f49f1a79343364b9f02ebcb368413",
+     "minerPaid": "248914286576916",
+     "burned": "0",
+     "aggregateGn": "1418"
+    }
+   ],
+   "channel": {
+    "agent": "5DFEJht53gE5XGtL746kX3P3hTJKro6BrD9aC5bFKKVVZAtk",
+    "miner": "5HKiGNFSqSyEMVMjjr8JBKkkppytaqFZCRm27KGbCeHhUq92",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "292840337149312"
+   }
+  },
+  "0xf347b9ab8ce1c92a91859c9b732479a1609994d3b1a5420a7a78f174028d6226:4552341:5": {
+   "settledBlock": "4552341",
+   "blockHash": "0xfb53be17df13ea16dff35ebd91664cb4ae2392ca2b7af6ae58d9011c9f3f62cd",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xf347b9ab8ce1c92a91859c9b732479a1609994d3b1a5420a7a78f174028d6226",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5D5dxDDNhQKXm22BmuiUXgNDtLyKnCico9svveJK366bBYpo",
+    "miner": "5Hg1hNrGVTm58Peqbbn7abg5A3DGxrwmxeUReexE13Afzxtg",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x39215c65f591fa54b39416db6887a6216a457965f06011e105431cdff2ff160e:4552356:5": {
+   "settledBlock": "4552356",
+   "blockHash": "0x8bb4317549b93c55b445d7581e5aca41a64bae58ebeabe19037f9d0b6512abce",
+   "settled": [
+    {
+     "blockEventIndex": 33,
+     "eventIndex": 5,
+     "channelId": "0x39215c65f591fa54b39416db6887a6216a457965f06011e105431cdff2ff160e",
+     "minerPaid": "757094494029691050",
+     "burned": "0",
+     "aggregateGn": "433"
+    },
+    {
+     "blockEventIndex": 42,
+     "eventIndex": 5,
+     "channelId": "0xcfd6a01939fa1e697b98e63118f1092196d34566faf08fd78f3a2ff5d15db4a7",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5CY1vUJw1eLxgvxxpfWBzC4yr78SFXzr1K3ze7ysYowHYzsr",
+    "miner": "5HdTbhVY9jZCsfJVFENYF89hRfkBvoby2YxPest3XLLRhnrt",
+    "modelHash": "0x1a52c1abe781db051e70ae357f72bb70161ca0c092df0b618f22a9292ba63306",
+    "escrow": "890699404740813000"
+   }
+  },
+  "0xcfd6a01939fa1e697b98e63118f1092196d34566faf08fd78f3a2ff5d15db4a7:4552356:5": {
+   "settledBlock": "4552356",
+   "blockHash": "0x8bb4317549b93c55b445d7581e5aca41a64bae58ebeabe19037f9d0b6512abce",
+   "settled": [
+    {
+     "blockEventIndex": 33,
+     "eventIndex": 5,
+     "channelId": "0x39215c65f591fa54b39416db6887a6216a457965f06011e105431cdff2ff160e",
+     "minerPaid": "757094494029691050",
+     "burned": "0",
+     "aggregateGn": "433"
+    },
+    {
+     "blockEventIndex": 42,
+     "eventIndex": 5,
+     "channelId": "0xcfd6a01939fa1e697b98e63118f1092196d34566faf08fd78f3a2ff5d15db4a7",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5DtteuYT9uZNKcNFCb88WNTJpPCh4BEwFnxoroQHrCkKsyJt",
+    "miner": "5FpwmvJVh4FFjE85cvKLdfD4t7h3suYAcrgUoRkeWeogBpVb",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x8c63a69d01351575dde5df609c633126468ceac89d88a0c4fbdc04e467f3b50b:4552362:5": {
+   "settledBlock": "4552362",
+   "blockHash": "0xfc42c156097d4e45600094a7a72c2c34b1d8a002dea44badce0342de29116a9c",
+   "settled": [
+    {
+     "blockEventIndex": 20,
+     "eventIndex": 5,
+     "channelId": "0x8c63a69d01351575dde5df609c633126468ceac89d88a0c4fbdc04e467f3b50b",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5HdZeGhtsaRTmUsSDQk4Cs7URCdAXvP35nL3FaFrqfpEZJUD",
+    "miner": "5HEoCeWiKiruNfSv7Me9FEMvf1pcEBzcfL5QnFuiM76Hzgh9",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x6031a3ce26e5c75e716f0a123865bb6e7f0d98fce4451be6e997d836659acf4a:4552406:5": {
+   "settledBlock": "4552406",
+   "blockHash": "0x828eef83b98c5c7029930a073b9dda070ec73595a942519899cfdd0feb8d1db7",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x6031a3ce26e5c75e716f0a123865bb6e7f0d98fce4451be6e997d836659acf4a",
+     "minerPaid": "42500000000000000",
+     "burned": "0",
+     "aggregateGn": "198487"
+    }
+   ],
+   "channel": {
+    "agent": "5DvyxbpFn9hq7qWM5XqAUPNFaZ3fvXR6RxSV4ys7X9wsLygD",
+    "miner": "5C8bRfMfoF7AwnZALEMWiSj9wACxhyWjKDuLaeTsBq2GX6Z3",
+    "modelHash": "0xfab8ec57f3bc1b5d4ca644fe12fab2ca1c35c24697d577c610b382cfea14d52d",
+    "escrow": "50000000000000000"
+   }
+  },
+  "0x479a8bab21042b2444c0ea8dee0161426d284e8a4e5a58dfd6085cd021eb2247:4552454:5": {
+   "settledBlock": "4552454",
+   "blockHash": "0xea176e5e4602a434ebf267d8e5217ec62ee5a5420fc3703a3ad7c5a912a1de2b",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0x479a8bab21042b2444c0ea8dee0161426d284e8a4e5a58dfd6085cd021eb2247",
+     "minerPaid": "5950000000003",
+     "burned": "0",
+     "aggregateGn": "14"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5D9uTgFbaNx7YbXRcckf47xvsegyTYbMXWgLeahGY2VBWw5x",
+    "modelHash": "0x1a52c1abe781db051e70ae357f72bb70161ca0c092df0b618f22a9292ba63306",
+    "escrow": "7000000000003"
+   }
+  },
+  "0xeaf3b6d7c1f265d3e35ae3dfe6d3697e0de1f6042b9e8a40571ee1cab0c5f138:4552474:5": {
+   "settledBlock": "4552474",
+   "blockHash": "0x7af3fcd1f8c45fdf87b7455ea28af652e7b749c83ed023ff1f42144b370b7b4b",
+   "settled": [
+    {
+     "blockEventIndex": 11,
+     "eventIndex": 5,
+     "channelId": "0xeaf3b6d7c1f265d3e35ae3dfe6d3697e0de1f6042b9e8a40571ee1cab0c5f138",
+     "minerPaid": "8360600000000003",
+     "burned": "0",
+     "aggregateGn": "19672"
+    }
+   ],
+   "channel": {
+    "agent": "5GsXb3TmNGixuEsbtixqHnqWr9UQJ2M8bkqBQWteNekgF98S",
+    "miner": "5EEwCVsYMJa4Sc9J9w3k2Rjwpvd2UghgkJacuT5RRTqyhEiR",
+    "modelHash": "0x4f8fcb1427199f8eaeaab751b6df123366a5792d021a695223c2c78e9e2634ce",
+    "escrow": "9836000000000003"
+   }
+  }
+ }
+}

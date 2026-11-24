@@ -1,5 +1,4 @@
-// Read-only explorer reads with the genesis pinned. One source today (the explorer's indexer);
-// cross-checking each row against chain Settled events over RPC is the next step (see README Limits).
+// Read-only explorer reads with the genesis pinned. Source one of two: src/rpc.mjs re-reads every row from the chain.
 import { NETWORKS } from './epoch.mjs';
 
 const UA = { 'user-agent': 'flop-receipt-root/0.1 (+https://github.com/xbtMelchizedek/flop-receipt-root)', accept: 'application/json' };

@@ -31,11 +31,27 @@ Flop's docs say to "build that part on an EVM chain and settle compute on FLOP",
 
 ```sh
 npm ci && npm test && forge test
-node src/cli.mjs build --network devnet --from 4552000 --out epoch.json   # reads public explorer data
+node src/cli.mjs build --network devnet --from 4552000 --out epoch.json   # explorer rows, each re-checked on chain over RPC
+node src/cli.mjs check --epoch-file epoch.json                          # re-run the chain cross-check
 node src/cli.mjs keygen --n 3        # throwaway keys in ~/.secrets/flop-receipt-root, mode 600; prints addresses only
 node src/cli.mjs sign --epoch-file epoch.json --chain-id 31337 --contract 0x... --keys 1,2
 node scripts/e2e-anvil.mjs           # fresh anvil on a free 127.0.0.1 port: deploy, sign, submit, verify all
 ```
+
+## Second source: the chain itself
+
+`build` no longer trusts the explorer alone. For every leaf, `src/rpc.mjs` reads the chain at that leaf's block hash over HTTPS JSON-RPC and checks:
+
+- **The block:** the canonical hash at `settledBlock` is the explorer's `settledBlockHash`.
+- **The event:** exactly one `computeChannel.Settled` event for this channel sits at `eventIndex` (the event's position inside its extrinsic). Its `minerPaid`, `burned` and `aggregateGn` must match.
+- **The channel:** the channel as it stood one block earlier must match the explorer's agent and miner keys (SS58 decoded by our own code, checksum verified), `modelHash` and `escrow`.
+- **The boundary:** the epoch's `toBlock` is finalized according to the RPC, and the chain's hash at that height is `toBlockHash`.
+
+If any of these disagree, the build writes nothing and prints every disagreement by field. `check --epoch-file` re-runs the same test on an existing epoch.
+
+- On the 99-settlement test epoch, all 99 leaves agree field by field. The chain's view is recorded in `test/fixtures/chain_facts.json` (re-record with `node scripts/record-chain-facts.mjs`).
+- A live devnet build at 3:17 PM ET on Nov 24 cross-checked 2 of 2 new settlements in 14 s.
+- Devnet RPC is `https://rpc.devnet.flop.network`. No public testnet RPC is published yet, so testnet needs `--rpc <https url>`, and the genesis is still pinned.
 
 ## Intent escrow (local prototype, mock USDC)
 
@@ -60,7 +76,7 @@ No owner, no fees, no setters, no upgrade. Per-intent `MAX_AMOUNT` is fixed at d
 ## Trust model, stated plainly
 
 - **Attesters are a trust assumption.** A colluding quorum can post a fake root. They can't mint or move FLOP (there is none here), but anything paying out against a root (an escrow) is exposed up to its own limits. Mitigations: majority quorum, equivocation freeze, every leaf re-checkable by anyone against finalized Flop state, and consumers that cap value per epoch.
-- **One data source today.** The builder reads the explorer's indexer. Cross-checking each row against the chain's `computeChannel.Settled` event over RPC (as [flopscan](https://github.com/xbtMelchizedek/flopscan) does) is the next step. Until then an attester inherits the explorer's correctness.
+- **Two data sources, and the build refuses when they disagree.** The explorer supplies the rows. Then every leaf is re-read from the chain over HTTPS JSON-RPC (see below), along with the boundary block's hash. Both read the same pinned genesis, but they are separate services; if both are wrong the same way, this can't tell.
 - **Finality is the explorer writer's finalized head**, read from the same pinned genesis. Phase 2 would verify AlephBFT finality directly; feasibility on an EVM is unknown.
 - **Challenge window.** Flop's fraud-proof window is documented at about 7 days. Long-lived uses (reputation) should wait it out; this contract does not encode it.
 - **Testnet** has 0 settlements on Nov 24 2026 (no models listed yet), so the test epoch is devnet, where FLOP has no value.

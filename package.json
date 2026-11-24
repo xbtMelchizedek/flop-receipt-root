@@ -10,7 +10,8 @@
   "type": "module",
   "dependencies": {
     "@noble/curves": "1.9.7",
-    "@noble/hashes": "1.8.0"
+    "@noble/hashes": "1.8.0",
+    "@polkadot/api": "17.0.2"
   },
   "bin": {
     "flop-receipt-root": "src/cli.mjs"
