@@ -6,6 +6,20 @@ Read **finalized** compute-channel settlements from a Flop network, put them in 
 
 Status: local prototype (receipt root + intent escrow). Tested with Foundry and on a throwaway anvil chain only. **Not deployed anywhere.** The attester keys are throwaway local keys with no funds. Unaffiliated with Flop Labs.
 
+**Live verifier:** https://xbtmelchizedek.github.io/flop-receipt-root/ (check any settlement's proof in your browser, then tamper with it)
+
+## Quickstart
+
+```sh
+npx github:xbtMelchizedek/flop-receipt-root build --network devnet --last 3600 --out epoch.json   # latest hour of devnet, cross-checked on chain
+```
+
+Or clone it and run the whole agent loop locally (needs [Foundry](https://getfoundry.sh)): `npm ci && npm run demo`.
+
+As a library (npm package name `flop-receipt-root`): `import { leafHash, verifyProof, crossCheck } from 'flop-receipt-root'`.
+
+[Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Good first issues](https://github.com/xbtMelchizedek/flop-receipt-root/issues?q=is%3Aopen+label%3A%22good+first+issue%22)
+
 ## Why
 
 Flop's docs say to "build that part on an EVM chain and settle compute on FLOP", and that FLOP has no smart contracts and will not build bridges. An EVM app that pays for inference (an intent escrow, a router, a reputation registry) needs one fact from Flop: *did this agent's channel with this miner settle, for this model, for this much G_n and FLOP?* This repo is the smallest honest answer: a signed summary of finalized state, checkable leaf by leaf.

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>flop-receipt-root: check a Flop compute settlement against a signed root, in your browser</title>
+<meta name="description" content="Bridgeless receipts for Flop. Finalized compute settlements in one Merkle root; verify any single settlement in the browser, the same way the Solidity contract does.">
+<script>document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="arc/foundation.css">
+<link rel="stylesheet" href="arc/badge.css">
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">
+{ "imports": {
+  "@noble/hashes/sha3": "./vendor/noble-hashes/sha3.js",
+  "@noble/hashes/blake2b": "./vendor/noble-hashes/blake2b.js",
+  "@noble/hashes/utils": "./vendor/noble-hashes/utils.js",
+  "@noble/hashes/crypto": "./vendor/noble-hashes/crypto.js"
+} }
+</script>
+</head>
+<body>
+<main>
+  <header>
+    <h1>flop-receipt-root</h1>
+    <p class="lede">Prove that compute settled on Flop, to any EVM contract, without a bridge. Finalized settlements go into one Merkle root, a majority of attesters signs it, and anyone can check a single settlement against it. This page runs the same check in your browser.</p>
+    <p class="muted"><a href="https://github.com/xbtMelchizedek/flop-receipt-root">GitHub</a> · <a href="https://github.com/xbtMelchizedek/flop-receipt-root#demo-quote-intent-fill-verify-all-local">Run the full demo</a> · Unaffiliated with Flop Labs. Devnet FLOP has no value. Nothing here is deployed on any chain.</p>
+  </header>
+
+  <section class="panel">
+    <h2>Epoch</h2>
+    <label>Which root <select id="pick"></select></label>
+    <div id="meta" class="muted"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Settlements</h2>
+    <p class="muted">Pick one to recompute its leaf and walk its proof up to the root. Then tamper with it and watch the proof fail.</p>
+    <div id="rows" class="wrap"></div>
+  </section>
+
+  <section class="panel" id="check" hidden>
+    <h2>Check</h2>
+    <div id="verdict" role="status" aria-live="polite"></div>
+    <div class="actions"><button id="tamper" type="button">Add 1 planck to minerPaid</button> <button id="reset" type="button" class="secondary">Reset</button></div>
+    <div id="steps" class="wrap"></div>
+  </section>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

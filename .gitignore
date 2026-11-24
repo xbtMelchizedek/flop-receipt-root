@@ -7,3 +7,5 @@ broadcast/
 *.pem
 *.seed
 keys/
+_site/
+web-data/

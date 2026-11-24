@@ -1,27 +1,64 @@
 {
   "name": "flop-receipt-root",
-  "version": "0.1.0",
-  "description": "Summarize finalized Flop settlements into a Merkle root, sign it with N-of-M attesters, verify it on an EVM. Local and read-only: never broadcasts.",
-  "main": "src/epoch.mjs",
-  "scripts": {
-    "test": "node --test test/*.test.mjs",
-    "demo": "node scripts/demo.mjs",
-    "e2e": "node scripts/e2e-anvil.mjs"
+  "version": "0.2.0",
+  "description": "Bridgeless receipts for Flop: finalized compute settlements in one Merkle root, cross-checked against the chain over RPC, signed N-of-M and verified by a small Solidity contract. Plus a USDC intent escrow that pays only against a proven settlement. Read-only; never broadcasts.",
+  "keywords": [
+    "flop",
+    "receipts",
+    "merkle",
+    "eip-712",
+    "inference",
+    "agents",
+    "escrow",
+    "solidity",
+    "foundry",
+    "substrate",
+    "bridgeless"
+  ],
+  "homepage": "https://xbtmelchizedek.github.io/flop-receipt-root/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xbtMelchizedek/flop-receipt-root.git"
   },
+  "bugs": {
+    "url": "https://github.com/xbtMelchizedek/flop-receipt-root/issues"
+  },
+  "author": "xbtMelchizedek",
   "license": "MIT",
   "type": "module",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./rpc": "./src/rpc.mjs",
+    "./codec": "./src/codec.mjs",
+    "./merkle": "./src/merkle.mjs",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "flop-receipt-root": "src/cli.mjs"
+  },
+  "files": [
+    "src",
+    "contracts/src",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "e2e": "node scripts/e2e-anvil.mjs",
+    "demo": "node scripts/demo.mjs",
+    "build-web": "node scripts/build-web.mjs",
+    "prepublishOnly": "npm test"
+  },
   "dependencies": {
     "@noble/curves": "1.9.7",
     "@noble/hashes": "1.8.0",
     "@polkadot/api": "17.0.2"
   },
-  "bin": {
-    "flop-receipt-root": "src/cli.mjs"
-  },
-  "engines": {
-    "node": ">=22"
-  },
   "devDependencies": {
-    "justweight": "github:xbtMelchizedek/justweight#526a426784ee3a34bc49957fcf1a09b1352b0bc2"
+    "justweight": "github:xbtMelchizedek/justweight#v0.4.0"
   }
 }

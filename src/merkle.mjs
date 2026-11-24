@@ -35,10 +35,15 @@ export function proofFor(tree, leaf) {
   return proof;
 }
 
+/** Every intermediate hash from the leaf up; the last one must equal the root. */
+export function proofPath(leaf, proof) {
+  const path = [leaf];
+  for (const p of proof) path.push(pair(path.at(-1), p));
+  return path;
+}
+
 export function verifyProof(root, leaf, proof) {
-  let h = leaf;
-  for (const p of proof) h = pair(h, p);
-  return cmp(h, root) === 0;
+  return cmp(proofPath(leaf, proof).at(-1), root) === 0;
 }
 
 export const hexProof = (p) => p.map(hex);

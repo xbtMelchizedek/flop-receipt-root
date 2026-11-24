@@ -29,7 +29,7 @@ const work = mkdtempSync(join(tmpdir(), 'frr-demo-'));
 process.env.FRR_KEY_DIR = join(work, 'keys');
 
 // 1. Quote.
-const { infer } = await import(process.env.JUSTWEIGHT_INFER ?? 'justweight/src/infer.mjs');
+const { infer } = await import(process.env.JUSTWEIGHT_INFER ?? 'justweight/infer');
 const load = async () => {
   if (snapArg) return JSON.parse(readFileSync(snapArg, 'utf8'));
   if (offline) throw new Error('--offline needs --snapshot <file> for the quote');

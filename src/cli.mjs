@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // flop-receipt-root CLI. Reads public explorer data, builds roots, signs with throwaway local keys.
 // It never sends a transaction to any network.
-import { mkdirSync, readFileSync, writeFileSync, existsSync, chmodSync, statSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { mkdirSync, readFileSync, writeFileSync, existsSync, chmodSync, statSync, realpathSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { randomBytes } from 'node:crypto';
@@ -22,7 +23,7 @@ async function openChain(network, url) {
 }
 
 const HELP = `flop-receipt-root
-  build  --network devnet|testnet --from <block> [--max <rows>] [--epoch <n>] [--rpc <https url>] --out <file>
+  build  --network devnet|testnet (--from <block> | --last <blocks>) [--max <rows>] [--epoch <n>] [--rpc <https url>] --out <file>
          # every leaf is re-read from the chain over JSON-RPC; any disagreement refuses the build
   check  --epoch-file <file> [--rpc <https url>]   # re-run the chain cross-check on an existing epoch file
   keygen --n <count>                      # throwaway attester keys in ~/.secrets/flop-receipt-root (mode 600)
@@ -49,11 +50,12 @@ export async function main(argv, { fetchImpl = globalThis.fetch, out = console.l
   const { cmd, o } = args(argv);
   if (cmd === 'build') {
     if (!NETWORKS[o.network]) throw new Error('--network must be devnet or testnet');
-    const fromBlock = uint('from', o.from);
+    if ((o.from === undefined) === (o.last === undefined)) throw new Error('give exactly one of --from <block> or --last <blocks>');
     const epoch = uint('epoch', o.epoch ?? '1');
     const maxRows = uint('max', o.max ?? '1000');
     if (!o.out) throw new Error('--out is required');
     const finalized = await finalizedHead(o.network, fetchImpl);
+    const fromBlock = o.from !== undefined ? uint('from', o.from) : Math.max(0, finalized.number - uint('last', o.last));
     const rows = await settlementsSince(o.network, fromBlock, { maxRows, fetchImpl });
     const e = buildEpoch({ rows, finalized, genesis: NETWORKS[o.network].genesis, epoch, fromBlock });
     const chain = chainImpl ?? (await openChain(o.network, o.rpc));
@@ -120,6 +122,15 @@ export async function main(argv, { fetchImpl = globalThis.fetch, out = console.l
   return cmd ? 2 : 0;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+/** True when this file is the process entry, also through an npm/npx bin symlink. */
+function isEntry() {
+  try {
+    return !!process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url);
+  } catch {
+    return false;
+  }
+}
+
+if (isEntry()) {
   main(process.argv.slice(2)).then((c) => process.exit(c), (e) => { console.error(JSON.stringify({ ok: false, error: e.message })); process.exit(2); });
 }
