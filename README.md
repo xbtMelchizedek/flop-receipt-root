@@ -119,7 +119,7 @@ If any of these disagree, the build writes nothing and prints every disagreement
 
 - On the 99-settlement test epoch, all 99 leaves agree field by field. The chain's view is recorded in `test/fixtures/chain_facts.json` (re-record with `node scripts/record-chain-facts.mjs`).
 - A live devnet build at 3:17 PM ET on Nov 24 cross-checked 2 of 2 new settlements in 14 s.
-- Devnet RPC is `https://rpc.devnet.flop.network`. No public testnet RPC is published yet, so testnet needs `--rpc <https url>`, and the genesis is still pinned.
+- Devnet RPC is `https://rpc.devnet.flop.network`. Testnet RPC is `https://testnet.flop.network` (the testnet FAQ gives `wss://testnet.flop.network/`; the same host answers HTTPS JSON-RPC). On both, the genesis hash is pinned, so a node on another chain is refused. `--rpc` still overrides.
 
 ## Intent escrow (local prototype, mock USDC)
 

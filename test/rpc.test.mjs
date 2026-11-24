@@ -103,9 +103,12 @@ test('cli build: writes the root only when the chain agrees; disagreement writes
   assert.equal(await main(['check', '--epoch-file', join(dir, 'fx.json')], { chainImpl: chainFrom(bad), out: () => {} }), 1);
 });
 
-test('rpc: no public testnet RPC is assumed; plain http is refused off localhost', async () => {
+test('rpc: testnet RPC is the published host with the genesis pinned; plain http is refused off localhost', async () => {
   const { connectRpc } = await import('../src/rpc.mjs');
-  await assert.rejects(connectRpc('testnet'), /pass --rpc/);
+  const { NETWORKS } = await import('../src/epoch.mjs');
+  assert.equal(NETWORKS.testnet.rpc, 'https://testnet.flop.network');
+  assert.equal(NETWORKS.testnet.genesis, '0x918abd58fb16306b30ef3886514cfaebffecb4de43e82b6f8ec4795c43cfd800');
+  await assert.rejects(connectRpc('testnet', 'http://testnet.flop.network'), /must be https/);
   await assert.rejects(connectRpc('devnet', 'http://rpc.example.com'), /must be https/);
   await assert.rejects(connectRpc('mainnet'), /unknown network/);
 });

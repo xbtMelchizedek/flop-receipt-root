@@ -2,6 +2,10 @@
 
 Versions follow [semver](https://semver.org). Before 1.0, minor versions may change the leaf or epoch file format; the contract and the JS codec always change together.
 
+## 0.3.1 (2026-11-24)
+
+- Testnet RPC: `NETWORKS.testnet.rpc` is now `https://testnet.flop.network`, so `check`, `verify --chain` and `connectRpc('testnet')` work without `--rpc`. The testnet genesis stays pinned: a node that reports a different genesis is refused. The testnet explorer's settlement API is not up yet, so a testnet `build` still has nothing to read. The public node rate-limits: at 4:29 PM ET on 2026-11-24 it answered `429 Too Many Requests` to the API's start-up calls, so retry later if that happens.
+
 ## 0.3.0 (2026-11-24)
 
 - **`proof` command.** Prints one receipt's settlement tuple, proof, ABI calldata for `verify` (and `fill` with `--intent`), and a ready `cast call` line. The calldata matches `cast calldata` byte for byte, and the anvil e2e sends it raw to the deployed contract, which returns `true`.
