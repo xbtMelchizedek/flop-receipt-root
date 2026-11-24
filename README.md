@@ -35,8 +35,28 @@ node src/cli.mjs build --network devnet --from 4552000 --out epoch.json   # expl
 node src/cli.mjs check --epoch-file epoch.json                          # re-run the chain cross-check
 node src/cli.mjs keygen --n 3        # throwaway keys in ~/.secrets/flop-receipt-root, mode 600; prints addresses only
 node src/cli.mjs sign --epoch-file epoch.json --chain-id 31337 --contract 0x... --keys 1,2
-node scripts/e2e-anvil.mjs           # fresh anvil on a free 127.0.0.1 port: deploy, sign, submit, verify all
+npm run e2e                          # fresh anvil on a free 127.0.0.1 port: deploy, sign, submit, verify all, escrow
+npm run demo                         # quote -> intent -> fill -> verify, one command
 ```
+
+## Demo: quote, intent, fill, verify (all local)
+
+```sh
+npm ci && npm run demo        # needs Foundry (anvil, forge, cast) and network for the quote and the RPC check
+```
+
+It runs the loop an agent would use, end to end:
+
+1. **Quote.** justweight's `infer` tool (pinned as a dev dependency) quotes a mid-tier, no-retention job from the published price snapshot. It is quote-only: it spends nothing and holds no keys.
+2. **Check the settlement on Flop.** One finalized devnet settlement from the bundled epoch is re-read from `rpc.devnet.flop.network` and compared field by field.
+3. **Post.** A fresh anvil chain gets the receipt root (signed by throwaway attesters), mock USDC and the escrow. The agent posts an intent for the quoted price, rounded up to USDC units.
+4. **Fill.** A solver bonds, claims and fills with that settlement and its proof. The escrow pays only after `FlopReceiptRoot.verify` accepts it.
+
+A run at 3:20 PM ET on Nov 24 quoted near-ai on OpenRouter at $0.0010806. It posted a 1,081-unit intent, the chain cross-check found 0 disagreements, the fill used 129,053 gas, the solver received exactly 1,081 units and `verify` returned true.
+
+`--offline --snapshot <file>` uses recorded chain facts instead of the RPC.
+
+**The gap, stated plainly:** Flop testnet has no models listed yet, so nobody can buy this exact job on Flop today. The settlement is a real finalized devnet settlement standing in for it. The quote comes from OpenRouter-side prices because those venues are live. When testnet lists models, step 2 becomes a testnet settlement and justweight's Flop column fills in (see justweight's watcher).
 
 ## Second source: the chain itself
 

@@ -22,4 +22,5 @@ jobs:
       - run: forge test
         env:
           FOUNDRY_PROFILE: ci
+      - run: npm run e2e
       - run: python3 scripts/secret_scan.py

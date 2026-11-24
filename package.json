@@ -4,7 +4,9 @@
   "description": "Summarize finalized Flop settlements into a Merkle root, sign it with N-of-M attesters, verify it on an EVM. Local and read-only: never broadcasts.",
   "main": "src/epoch.mjs",
   "scripts": {
-    "test": "node --test test/*.test.mjs"
+    "test": "node --test test/*.test.mjs",
+    "demo": "node scripts/demo.mjs",
+    "e2e": "node scripts/e2e-anvil.mjs"
   },
   "license": "MIT",
   "type": "module",
@@ -18,5 +20,8 @@
   },
   "engines": {
     "node": ">=22"
+  },
+  "devDependencies": {
+    "justweight": "github:xbtMelchizedek/justweight#526a426784ee3a34bc49957fcf1a09b1352b0bc2"
   }
 }

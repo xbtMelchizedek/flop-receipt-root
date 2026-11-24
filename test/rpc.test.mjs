@@ -109,3 +109,13 @@ test('rpc: no public testnet RPC is assumed; plain http is refused off localhost
   await assert.rejects(connectRpc('devnet', 'http://rpc.example.com'), /must be https/);
   await assert.rejects(connectRpc('mainnet'), /unknown network/);
 });
+
+test('demo units: USD quote to USDC units rounds up, never to zero, refuses junk', async () => {
+  const { usdToUnits } = await import('../scripts/lib/units.mjs');
+  assert.equal(usdToUnits('0.0010806'), 1081n);
+  assert.equal(usdToUnits('0.000001'), 1n);
+  assert.equal(usdToUnits('0.000000001'), 1n);
+  assert.equal(usdToUnits('0'), 1n);
+  assert.equal(usdToUnits('12.5'), 12_500_000n);
+  for (const bad of ['-1', '1e-3', '0.0000000001', '', 1]) assert.throws(() => usdToUnits(bad), /bad USD/);
+});
