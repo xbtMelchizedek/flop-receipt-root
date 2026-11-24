@@ -26,6 +26,14 @@ try {
   for (const it of fx.items) if (c.call(addr, VERIFY, '1', settlementTuple(it.fields), proofArg(it.proof)) === 'true') ok++;
   const bad = { ...fx.items[0].fields, minerPaid: String(BigInt(fx.items[0].fields.minerPaid) + 1n) };
   const tampered = c.call(addr, VERIFY, '1', settlementTuple(bad), proofArg(fx.items[0].proof));
+  // The CLI's `proof` calldata, sent raw, must verify on the real contract; `verify` must pass offline with the
+  // attester set pinned to the keys the contract was deployed with.
+  let bundle;
+  await main(['proof', '--epoch-file', epochFile, '--leaf', fx.items[0].leaf, '--contract', addr], { out: (s) => (bundle = JSON.parse(s)) });
+  const rawCall = JSON.parse(c.rpcCall('eth_call', JSON.stringify({ to: addr, data: bundle.verifyCalldata }), '"latest"'));
+  const cliProofVerifies = BigInt(rawCall) === 1n;
+  const steps = [];
+  const cliVerifyExit = await main(['verify', '--epoch-file', epochFile, '--leaf', fx.items[0].leaf, '--attesters', attesters.join(','), '--threshold', '2'], { out: (s) => steps.push(JSON.parse(s)) });
   const verifyGas = c.estimate(addr, VERIFY.replace('(bool)', ''), '1', settlementTuple(fx.items[0].fields), proofArg(fx.items[0].proof));
 
   // Intent escrow against a test-only mock USDC: post, bond, claim, fill with a real devnet settlement.
@@ -51,9 +59,9 @@ try {
   const reuse = c.tries(solver, esc, FILL, '2', '1', settlementTuple(f5), proofArg(it5.proof));
   const escrowHeld = c.balance(usdc, esc);
   const escrow = { mockUsdc: usdc, escrow: esc, tamperedFill, fillStatus: fillTx.status, fillGas: Number(fillTx.gasUsed), solverPaid: String(solverGot), sameSettlementAgain: reuse, escrowHolds: String(escrowHeld) };
-  console.log(JSON.stringify({ chain: 'anvil 31337 @127.0.0.1', contract: addr, attesters, threshold: 2, submitStatus: tx.status, submitGas: Number(tx.gasUsed), verified: `${ok}/${fx.items.length}`, tamperedVerifies: tampered, verifyGasEstimate: verifyGas, escrow }, null, 1));
+  console.log(JSON.stringify({ chain: 'anvil 31337 @127.0.0.1', contract: addr, attesters, threshold: 2, submitStatus: tx.status, submitGas: Number(tx.gasUsed), verified: `${ok}/${fx.items.length}`, tamperedVerifies: tampered, verifyGasEstimate: verifyGas, cliProofVerifies, cliVerify: { exit: cliVerifyExit, steps: steps.map((x) => `${x.step}:${x.ok}`) }, escrow }, null, 1));
   // After fill 1: solver's 2 USDC bond is free again and re-locked by claim 2; escrow holds intent 2 (10) + that bond (2).
-  if (ok !== fx.items.length || tampered !== 'false' || tamperedFill !== 'reverted' || reuse !== 'reverted' || solverGot !== AMT || escrowHeld !== AMT + 2_000_000n) process.exitCode = 1;
+  if (ok !== fx.items.length || !cliProofVerifies || cliVerifyExit !== 0 || steps.length !== 4 || tampered !== 'false' || tamperedFill !== 'reverted' || reuse !== 'reverted' || solverGot !== AMT || escrowHeld !== AMT + 2_000_000n) process.exitCode = 1;
 } finally {
   c.stop();
 }

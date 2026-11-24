@@ -44,10 +44,11 @@ export async function startAnvil() {
   const send = (from, to, sig, ...a) => JSON.parse(sh('cast', ['send', to, sig, ...a, '--rpc-url', rpc, '--unlocked', '--from', from, '--json']));
   const tries = (from, to, sig, ...a) => { try { send(from, to, sig, ...a); return 'accepted'; } catch { return 'reverted'; } };
   const call = (to, sig, ...a) => sh('cast', ['call', to, sig, ...a, '--rpc-url', rpc]);
+  const rpcCall = (method, ...params) => sh('cast', ['rpc', method, ...params, '--rpc-url', rpc]);
   const estimate = (to, sig, ...a) => Number(sh('cast', ['estimate', to, sig, ...a, '--rpc-url', rpc]));
   const balance = (token, who) => BigInt(call(token, 'balanceOf(address)(uint256)', who).split(' ')[0]);
   const now = () => Number(sh('cast', ['block', 'latest', '--field', 'timestamp', '--rpc-url', rpc]));
-  return { rpc, accounts, create, send, tries, call, estimate, balance, now, stop };
+  return { rpc, accounts, create, send, tries, call, rpcCall, estimate, balance, now, stop };
 }
 
 export const ROOT_MSG = '(bytes32,uint64,uint64,uint64,bytes32,uint32,bytes32)';

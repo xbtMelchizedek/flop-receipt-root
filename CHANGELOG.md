@@ -2,6 +2,14 @@
 
 Versions follow [semver](https://semver.org). Before 1.0, minor versions may change the leaf or epoch file format; the contract and the JS codec always change together.
 
+## 0.3.0 (2026-11-24)
+
+- **`proof` command.** Prints one receipt's settlement tuple, proof, ABI calldata for `verify` (and `fill` with `--intent`), and a ready `cast call` line. The calldata matches `cast calldata` byte for byte, and the anvil e2e sends it raw to the deployed contract, which returns `true`.
+- **`verify` command.** Checks one receipt offline in steps (leaf, range, proof, attester quorum), plus an optional re-read from the chain with `--rpc`. It prints one JSON line per step, exits 0 only if all of them pass, and lets you pin the attester set with `--attesters`. Closes #2.
+- Library: `findItem`, `calldata`, `proofBundle`, `verifyReceipt` (also exported as `flop-receipt-root/receipt`).
+- 23 node tests, including all 99 fixture receipts through every step, each tampering case caught at its step, and the CLI through an npx-style symlink.
+- README: "Check one receipt" and the agent inference kit links.
+
 ## 0.2.0 (2026-11-24)
 
 - **Second source.** `build` re-reads every leaf from the Flop chain over HTTPS JSON-RPC before it writes anything: block hash, the `computeChannel.Settled` event at its index, and the channel's agent, miner, model and escrow one block earlier, plus the boundary block hash. Any disagreement refuses the build. New `check` command; `--last <blocks>` option.

@@ -16,7 +16,9 @@ npx github:xbtMelchizedek/flop-receipt-root build --network devnet --last 3600 -
 
 Or clone it and run the whole agent loop locally (needs [Foundry](https://getfoundry.sh)): `npm ci && npm run demo`.
 
-As a library (npm package name `flop-receipt-root`): `import { leafHash, verifyProof, crossCheck } from 'flop-receipt-root'`.
+As a library (npm package name `flop-receipt-root`): `import { leafHash, verifyProof, crossCheck, verifyReceipt, calldata } from 'flop-receipt-root'`.
+
+Check one receipt: `npx github:xbtMelchizedek/flop-receipt-root verify --epoch-file epoch.json --leaf 0x...` (see [Check one receipt](#check-one-receipt)).
 
 [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Good first issues](https://github.com/xbtMelchizedek/flop-receipt-root/issues?q=is%3Aopen+label%3A%22good+first+issue%22)
 
@@ -47,11 +49,43 @@ Flop's docs say to "build that part on an EVM chain and settle compute on FLOP",
 npm ci && npm test && forge test
 node src/cli.mjs build --network devnet --from 4552000 --out epoch.json   # explorer rows, each re-checked on chain over RPC
 node src/cli.mjs check --epoch-file epoch.json                          # re-run the chain cross-check
+node src/cli.mjs proof  --epoch-file epoch.json --leaf 0x...            # tuple, proof, calldata, cast line for one receipt
+node src/cli.mjs verify --epoch-file epoch.json --leaf 0x... --attesters 0x..,0x..,0x.. --threshold 2 [--rpc https://...]
 node src/cli.mjs keygen --n 3        # throwaway keys in ~/.secrets/flop-receipt-root, mode 600; prints addresses only
 node src/cli.mjs sign --epoch-file epoch.json --chain-id 31337 --contract 0x... --keys 1,2
 npm run e2e                          # fresh anvil on a free 127.0.0.1 port: deploy, sign, submit, verify all, escrow
 npm run demo                         # quote -> intent -> fill -> verify, one command
 ```
+
+## Check one receipt
+
+You have an epoch file and one settlement in it. Two commands cover it.
+
+**`proof`** prints everything a contract call needs: the settlement tuple in the contract's field order, the proof, ABI calldata for `FlopReceiptRoot.verify` (and for `IntentEscrow.fill` with `--intent <id>`), and a ready `cast call` line. The calldata matches `cast calldata` byte for byte. `npm run e2e` sends it raw to the deployed test contract, which returns `true`.
+
+```sh
+npx github:xbtMelchizedek/flop-receipt-root proof --epoch-file test/fixtures/epoch.json \
+  --leaf 0xaa8c1f1bb1500d6eafeadf22c091c42eb93eb5777f6950baff3f57136b4fb53b
+```
+
+**`verify`** checks the receipt offline, one JSON line per step. It exits 0 only if every step that ran passed.
+
+| step | checks |
+|---|---|
+| `leaf` | The 12 fields hash to the stored leaf, using the same encoding as the contract. |
+| `range` | Same genesis, and the settled block is inside the epoch's block range. |
+| `proof` | The proof reaches the epoch root. |
+| `quorum` | The root's EIP-712 signatures recover to distinct attesters in the set, at least `threshold` of them, for that chain id and contract. Pin the set with `--attesters`; otherwise it's read from the file and the output says so. |
+| `chain` | With `--rpc <https url>`, the settlement is re-read from Flop: block hash, the `Settled` event at its index, and the channel one block earlier. The block must also be finalized. |
+
+```
+{"step":"leaf","ok":true,"detail":"fields hash to 0xaa8c…b53b"}
+{"step":"range","ok":true,"detail":"block 4548714 in 4548551..4552514, same genesis"}
+{"step":"proof","ok":true,"detail":"7 hashes up to root 0xa206…a511"}
+{"step":"quorum","ok":true,"detail":"2 of 3 attesters signed, threshold 2, chain 31337, contract 0x…f10b; attester set read from the epoch file (pin it with --attesters)"}
+```
+
+Each kind of tampering fails at its own step, and the tests cover every case: a changed field, a reordered proof, a block outside the range, one signature, the same signature twice, an outsider in a pinned set, the wrong chain id, and a chain that disagrees.
 
 ## Demo: quote, intent, fill, verify (all local)
 
@@ -118,6 +152,16 @@ No owner, no fees, no setters, no upgrade. Per-intent `MAX_AMOUNT` is fixed at d
 ## Proposed schema for Flop Labs
 
 If Flop publishes a canonical settlement export, the leaf above is what an EVM consumer needs: payer (`agent`), `miner`, `modelHash`, `aggregateGn`, `minerPaid`, `burned`, `escrow`, `channelId`, `settledBlock` and its hash, and the event index, all bound to the network `genesis`. Missing today: precision and decode-policy hash per settlement, and a free-form commitment field to bind an external intent id (asked on flop-labs/network#49).
+
+## Part of the agent inference kit
+
+Small tools that each do one job and work together. Use any one on its own.
+
+- [justweight](https://github.com/xbtMelchizedek/justweight): one price table for every inference venue (Flop, Pearl, Venice, Chutes, each OpenRouter provider, local) in one unit, with each price linked to its source.
+- [justweight `infer`](https://github.com/xbtMelchizedek/justweight#infer-route-one-call-with-caps-and-a-receipt): an MCP tool that routes one call to the cheapest venue meeting your privacy floor, under hard spend caps, and returns chained receipts.
+- [agent-price-feed](https://github.com/xbtMelchizedek/agent-price-feed): alerts by JSON Feed, RSS, CLI and MCP when those prices move, a cheaper route appears, or Flop lists a model.
+- [agent-spendcap](https://github.com/xbtMelchizedek/agent-spendcap): a budget policy for agents: holds before each call, settlement from real usage, a hash-chained ledger, and a drop-in fetch for OpenAI-compatible APIs.
+- [flop-receipt-root](https://github.com/xbtMelchizedek/flop-receipt-root) (this repo): proves a Flop compute settlement to an EVM contract without a bridge, and checks one receipt offline.
 
 ## Review notes (dev-taste G1 and R, short)
 
