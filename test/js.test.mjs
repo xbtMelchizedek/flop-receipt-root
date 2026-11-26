@@ -142,3 +142,76 @@ test('cli keygen: keys mode 600 in a 700 dir, output has addresses only', async 
   }
   assert.equal(statSync(process.env.FRR_KEY_DIR).mode & 0o777, 0o700);
 });
+
+const TN_G = NETWORKS.testnet.genesis;
+const TN_FIN = { number: 171569, hash: '0x' + 'ab'.repeat(32) };
+
+function rpcFake(map) {
+  const f = async (url, init = {}) => {
+    f.calls.push({ url, init });
+    const method = JSON.parse(init.body ?? '{}').method;
+    if (!(method in map)) return new Response(JSON.stringify({ jsonrpc: '2.0', id: 1, error: { message: `no ${method}` } }), { status: 200 });
+    const value = typeof map[method] === 'function' ? map[method](JSON.parse(init.body).params) : map[method];
+    return new Response(JSON.stringify({ jsonrpc: '2.0', id: 1, result: value }), { status: 200 });
+  };
+  f.calls = [];
+  return f;
+}
+
+test('fetch: testnet /api/health 404 falls back to stats+blocks, pinned on rpc', async () => {
+  const stats = {
+    latestBlockNumber: 171568,
+    finality: { finalizedBlock: TN_FIN.number, state: 'normal', safeMode: false },
+    protocolAccounts: { finalizedBlock: TN_FIN.number + 1, finalizedHash: '0x' + 'cd'.repeat(32) },
+  };
+  const expl = fake([
+    ['/api/stats', stats],
+    ['/api/blocks/171569', { number: TN_FIN.number, hash: TN_FIN.hash }],
+  ]);
+  const rpc = rpcFake({
+    chain_getBlockHash: (params) => (params[0] === 0 ? TN_G : params[0] === TN_FIN.number ? TN_FIN.hash.toUpperCase() : '0x' + '00'.repeat(32)),
+    chain_getFinalizedHead: '0x' + 'ee'.repeat(32),
+    chain_getHeader: { number: '0x' + (TN_FIN.number + 5).toString(16) },
+  });
+  assert.deepEqual(await finalizedHead('testnet', expl, { rpcFetch: rpc }), TN_FIN);
+  assert.ok(expl.calls.some((u) => new URL(u).pathname === '/api/health'));
+  assert.ok(expl.calls.some((u) => new URL(u).pathname === '/api/stats'));
+  assert.ok(expl.calls.some((u) => new URL(u).pathname === '/api/blocks/171569'));
+});
+
+test('fetch: stats fallback refuses a genesis or hash mismatch and an explorer ahead of rpc', async () => {
+  const stats = { finality: { finalizedBlock: TN_FIN.number }, protocolAccounts: {} };
+  const expl = () => fake([
+    ['/api/stats', stats],
+    ['/api/blocks/171569', { number: TN_FIN.number, hash: TN_FIN.hash }],
+  ]);
+  const rpcWrongGenesis = rpcFake({
+    chain_getBlockHash: (params) => (params[0] === 0 ? NETWORKS.devnet.genesis : TN_FIN.hash),
+    chain_getFinalizedHead: '0x' + 'ee'.repeat(32),
+    chain_getHeader: { number: '0x' + TN_FIN.number.toString(16) },
+  });
+  await assert.rejects(finalizedHead('testnet', expl(), { rpcFetch: rpcWrongGenesis }), /not the pinned testnet genesis/);
+
+  const rpcWrongHash = rpcFake({
+    chain_getBlockHash: (params) => (params[0] === 0 ? TN_G : '0x' + '11'.repeat(32)),
+    chain_getFinalizedHead: '0x' + 'ee'.repeat(32),
+    chain_getHeader: { number: '0x' + TN_FIN.number.toString(16) },
+  });
+  await assert.rejects(finalizedHead('testnet', expl(), { rpcFetch: rpcWrongHash }), /does not match rpc block/);
+
+  const rpcBehind = rpcFake({
+    chain_getBlockHash: (params) => (params[0] === 0 ? TN_G : TN_FIN.hash),
+    chain_getFinalizedHead: '0x' + 'ee'.repeat(32),
+    chain_getHeader: { number: '0x' + (TN_FIN.number - 1).toString(16) },
+  });
+  await assert.rejects(finalizedHead('testnet', expl(), { rpcFetch: rpcBehind }), /ahead of rpc finalized/);
+});
+
+test('fetch: a non-404 health error does not fall back to stats', async () => {
+  const f = async (url) => {
+    const u = new URL(url);
+    if (u.pathname === '/api/health') return new Response('down', { status: 503 });
+    return new Response(JSON.stringify({ finality: { finalizedBlock: TN_FIN.number } }), { status: 200 });
+  };
+  await assert.rejects(finalizedHead('testnet', f), /\/api\/health HTTP 503/);
+});

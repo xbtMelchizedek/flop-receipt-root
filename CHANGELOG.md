@@ -2,6 +2,10 @@
 
 Versions follow [semver](https://semver.org). Before 1.0, minor versions may change the leaf or epoch file format; the contract and the JS codec always change together.
 
+## 0.3.2 (2026-11-26)
+
+- Testnet explorer `finalizedHead`: when `/api/health` is missing (HTTP 404 on `testnet.flopscan.io`), fall back to `/api/stats` and `/api/blocks/<n>` for the finalized number and hash, then refuse unless the official Testnet RPC (`https://testnet.flop.network`) reports the pinned genesis `0x918abd58…cfd800`, the same block hash, and a finalized head at or above that block. A 503 or other health error still fails closed and does not fall back. Settlements are still re-read on chain before a root is written.
+
 ## 0.3.1 (2026-11-24)
 
 - Testnet RPC: `NETWORKS.testnet.rpc` is now `https://testnet.flop.network`, so `check`, `verify --chain` and `connectRpc('testnet')` work without `--rpc`. The testnet genesis stays pinned: a node that reports a different genesis is refused. The testnet explorer's settlement API is not up yet, so a testnet `build` still has nothing to read. The public node rate-limits: at 4:29 PM ET on 2026-11-24 it answered `429 Too Many Requests` to the API's start-up calls, so retry later if that happens.

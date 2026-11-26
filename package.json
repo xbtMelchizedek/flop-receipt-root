@@ -1,6 +1,6 @@
 {
   "name": "flop-receipt-root",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Bridgeless receipts for Flop: finalized compute settlements in one Merkle root, cross-checked against the chain over RPC, signed N-of-M and verified by a small Solidity contract. Plus a USDC intent escrow that pays only against a proven settlement. Read-only; never broadcasts.",
   "keywords": [
     "flop",

@@ -36,7 +36,7 @@ Flop's docs say to "build that part on an EVM chain and settle compute on FLOP",
 
 | step | where | what |
 |---|---|---|
-| 1 | `src/fetch.mjs` | Read the explorer's `/api/health`: refuse unless the genesis is the pinned one and the indexer has reached the finalized head. Read `/api/settlement-prices` newest-first down to `--from`; refuse if `--max` would cut the range. |
+| 1 | `src/fetch.mjs` | Read the explorer's `/api/health`: refuse unless the genesis is the pinned one and the indexer has reached the finalized head. If `/api/health` is missing (HTTP 404, as on `testnet.flopscan.io`), use `/api/stats` and `/api/blocks/<n>` and refuse unless the official RPC reports the same pinned genesis, the same finalized block hash, and a finalized head at or above that block. Other health errors still fail closed. Read `/api/settlement-prices` newest-first down to `--from`; refuse if `--max` would cut the range. |
 | 2 | `src/epoch.mjs` | Keep only `computeChannel.*` rows at or below the finalized block and inside the range; dedupe by (channel, block, event index). |
 | 3 | `src/codec.mjs` | Each settlement becomes a leaf: `keccak(keccak(abi.encode(LEAF_TYPEHASH, genesis, channelId, settledBlock, settledBlockHash, eventIndex, agent, miner, modelHash, aggregateGn, minerPaid, burned, escrow)))`. SS58 addresses are decoded to 32-byte keys with the checksum verified. Values that don't fit their width throw. |
 | 4 | `src/merkle.mjs` | Sorted-pair keccak tree (OpenZeppelin's rule). |
