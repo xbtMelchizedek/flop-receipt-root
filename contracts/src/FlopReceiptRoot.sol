@@ -47,6 +47,8 @@ contract FlopReceiptRoot {
     bytes32 public constant ROOT_TYPEHASH = keccak256(
         "ReceiptRoot(bytes32 genesis,uint64 epoch,uint64 fromBlock,uint64 toBlock,bytes32 toBlockHash,uint32 count,bytes32 root)"
     );
+    /// @notice Domain tag for jobIdOf: keccak256("FlopReceiptRoot.jobId.v1") = 0x748fa472...7d31bd14.
+    bytes32 public constant JOB_ID_TAG = keccak256("FlopReceiptRoot.jobId.v1");
     bytes32 private constant DOMAIN_TYPEHASH =
         keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)");
     uint256 private constant HALF_N = 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0;
@@ -150,6 +152,13 @@ contract FlopReceiptRoot {
                 )
             )
         );
+    }
+
+    /// @notice Stable 32-byte job id for one settlement event. Does not depend on the leaf layout.
+    /// @dev keccak256(abi.encode(JOB_ID_TAG, genesis, channelId, uint64 settledBlock, uint32 eventIndex)), 160 bytes.
+    ///      Unique only while a channel settles at most once per (block, in-extrinsic eventIndex); see README.
+    function jobIdOf(Settlement calldata s) public pure returns (bytes32) {
+        return keccak256(abi.encode(JOB_ID_TAG, s.genesis, s.channelId, s.settledBlock, s.eventIndex));
     }
 
     // ------------------------------------------------------------------ roots

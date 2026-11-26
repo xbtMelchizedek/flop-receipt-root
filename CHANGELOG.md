@@ -2,6 +2,10 @@
 
 Versions follow [semver](https://semver.org). Before 1.0, minor versions may change the leaf or epoch file format; the contract and the JS codec always change together.
 
+## Unreleased
+
+- **Normative job id.** `jobId = keccak256(abi.encode(JOB_ID_TAG, genesis, channelId, uint64 settledBlock, uint32 eventIndex))` with `JOB_ID_TAG = keccak256("FlopReceiptRoot.jobId.v1")`. JS `jobId`/`encodeJobId`, Solidity `jobIdOf`/`JOB_ID_TAG`, README section, and 6 vectors from an independent Python generator, checked by node and forge. Leaf format and root unchanged. For #4.
+
 ## 0.3.2 (2026-11-26)
 
 - Testnet explorer `finalizedHead`: when `/api/health` is missing (HTTP 404 on `testnet.flopscan.io`), fall back to `/api/stats` and `/api/blocks/<n>` for the finalized number and hash, then refuse unless the official Testnet RPC (`https://testnet.flop.network`) reports the pinned genesis `0x918abd58…cfd800`, the same block hash, and a finalized head at or above that block. A 503 or other health error still fails closed and does not fall back. Settlements are still re-read on chain before a root is written.

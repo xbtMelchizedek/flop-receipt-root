@@ -116,6 +116,23 @@ contract FlopReceiptRootTest is Test {
         }
     }
 
+    function test_jobIdTagAndVectors() public view {
+        string memory vj = vm.readFile("test/fixtures/jobid_vectors.json");
+        assertEq(c.JOB_ID_TAG(), vm.parseJsonBytes32(vj, ".tag"));
+        assertEq(c.JOB_ID_TAG(), 0x748fa4722b652359047a16941d7e978a83dcfab3a169bea48a5a663e7d31bd14);
+        uint256 k = vm.parseJsonUint(vj, ".count");
+        assertGe(k, 6);
+        for (uint256 i; i < k; ++i) {
+            string memory p = string.concat(".cases[", vm.toString(i), "]");
+            FlopReceiptRoot.Settlement memory s;
+            s.genesis = vm.parseJsonBytes32(vj, string.concat(p, ".genesis"));
+            s.channelId = vm.parseJsonBytes32(vj, string.concat(p, ".channelId"));
+            s.settledBlock = uint64(vm.parseUint(vm.parseJsonString(vj, string.concat(p, ".settledBlock"))));
+            s.eventIndex = uint32(vm.parseUint(vm.parseJsonString(vj, string.concat(p, ".eventIndex"))));
+            assertEq(c.jobIdOf(s), vm.parseJsonBytes32(vj, string.concat(p, ".jobId")), "jobId differs from vector");
+        }
+    }
+
     function test_submitAcceptsJsSignedRootAndAdvances() public {
         FlopReceiptRoot.RootMsg memory m = _msg();
         c.submit(m, _sigs());

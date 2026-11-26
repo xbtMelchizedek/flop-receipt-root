@@ -100,6 +100,18 @@ export function encodeLeaf(f) {
 /** Double hash, so a 64-byte inner node can never be presented as a leaf (second-preimage guard). */
 export const leafHash = (f) => keccak(keccak(encodeLeaf(f)));
 
+/**
+ * Stable job id for one settlement event (normative, see README "Job id"). Independent of the leaf
+ * layout, so a later leaf change does not remap ids. Keep leafHash for Merkle proofs.
+ * jobId = keccak256(abi.encode(bytes32 JOB_ID_TAG, bytes32 genesis, bytes32 channelId, uint64 settledBlock, uint32 eventIndex))
+ */
+export const JOB_ID_TAG_STRING = 'FlopReceiptRoot.jobId.v1';
+export const JOB_ID_TAG = keccak(utf8ToBytes(JOB_ID_TAG_STRING));
+export const encodeJobId = (f) => concatBytes(
+  JOB_ID_TAG, word(f.genesis, 'bytes32'), word(f.channelId, 'bytes32'), word(f.settledBlock, 64), word(f.eventIndex, 32),
+);
+export const jobId = (f) => keccak(encodeJobId(f));
+
 export function rootStructHash(m) {
   return keccak(concatBytes(
     ROOT_TYPEHASH, word(m.genesis, 'bytes32'), word(m.epoch, 64), word(m.fromBlock, 64), word(m.toBlock, 64),
